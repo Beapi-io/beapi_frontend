@@ -1,0 +1,53 @@
+
+var report = {
+    HEALTH_COLOR:[[0, 204, 0],[102, 255, 51],[204, 255, 51],[255, 255, 0],[255, 204, 102],[255, 153, 0],[255, 51, 0],[204, 51, 0]],
+    createNode:function (background,x,y,connections) {
+	var bg = background;
+	var mouseOver = false;
+	var x;
+	var y;
+	var arc_start;
+	var arc_end;
+	var conns = connections;
+	var diameter;
+	this.display(x,y,conns);
+    },
+    display:function(x,y,conns){
+	ellipseMode(CENTER);
+	if(conns!=null && conns>1){
+		for(var i=0;i<conns;i=i+1){
+			var diameter = min(x, y) * 0.5;
+alert(i+"<"+conns);
+			fill(this.HEALTH_COLOR[i][0],this.HEALTH_COLOR[i][1],this.HEALTH_COLOR[i][2]);
+			arc_start = radians(i*45);
+			arc_end = radians((i+1)*45);
+
+			noStroke();
+			arc(x,y,100,100,arc_start,arc_end);
+			strokeWeight(3);  // Thicker
+		 	stroke(255);
+			line( x, y, x + diameter/2 * cos(arc_start), y + diameter/2 * sin(arc_start)); 
+		}
+	}else{
+		ellipse(x,y,100,100);
+	}
+	line( x, y, x + diameter/2 * cos(arc_end), y + diameter/2 * sin(arc_end));
+	fill(255);
+	ellipse(x,y,50,50);
+
+	if(this.mouseOver(x,y,diameter)) {
+		this.display((x*2),(y*2),conns);
+	} else {
+		this.display(x,y,conns);
+	}
+    },
+    mouseOver:function(x,y,diameter,conns){
+	var disX = x - mouseX;
+	var disY = y - mouseY;
+	if(sqrt(sq(disX) + sq(disY)) < diameter/2 ) {
+		return true;
+	} else {
+		return false;
+	}
+    }
+}

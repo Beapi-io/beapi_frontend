@@ -1,0 +1,14 @@
+void setup() {
+	size(200,200);
+	noStroke();
+	float arc_start;
+	float arc_end;
+	for int i=0;i<8;i+1;){
+		fill(i*20,120+((4-i)*20),250-(i*20));
+		arc_start = radians(i*45);
+		arc_end = radians((i+1)*45);
+		arc(width/2,height/2,100,100,arc_start,arc_end);
+	}
+	fill(255);
+	ellipse(width/2,height,2,50,50);
+}
