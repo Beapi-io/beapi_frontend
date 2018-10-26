@@ -1,4 +1,4 @@
-# ORP-scheduler (frontend)
+# Beapi Frontend for Nodejs
 
 ## ENVIRONMENT SETUP
 1. Make sure you are using a version of Node.js greater than 6.X
