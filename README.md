@@ -15,7 +15,7 @@ sudo setcap cap_net_bind_service=+ep /usr/bin/nodejs <--(change if this isn't yo
 nodejs app.js
 ```
 
-## INSTALLATION (this can all be an install script in future)
+## INSTALLATION AS A SERVICE (this can all be an install script in future)
 1. add 'beapi' user
 ```
 useradd beapi -d /home/beapi
