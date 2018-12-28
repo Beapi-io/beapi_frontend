@@ -2,15 +2,18 @@
 
 ## ENVIRONMENT SETUP
 1. Make sure you are using a version of Node.js greater than 6.X
-2. Install PM2 to allow us to start/stop Node as a service.
-```
-sudo npm install pm2 -g
-```
 
 2. change the port that node listens on
 ```
 sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep /usr/bin/nodejs
+```
+
+
+## RUN 
+1. got to the root directory of the project and type the following:
+```
+nodejs app.js
 ```
 
 ## INSTALLATION (this can all be an install script in future)
