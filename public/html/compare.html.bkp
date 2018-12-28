@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>About Us 2 | Unify - Responsive Website Template</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico?v=3">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/headers/header-default.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v1.css">
+
+	<link rel="stylesheet" href="assets/css/headers/header-v6.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v6.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">
+	<link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/style/masterslider.css">
+	<link rel='stylesheet' href="assets/plugins/master-slider/masterslider/skins/black-2/style.css">
+
+	<link rel="stylesheet" href="assets/plugins/animate.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+
+	<!-- CSS Page Style -->
+	<link rel="stylesheet" href="assets/css/pages/page_about.css">
+	<link rel="stylesheet" href="assets/css/blocks.css">
+	<link rel="stylesheet" href="assets/css/pages/page_one.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
+	<link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+<style type="text/css">table#vsTable_104531{position:relative;z-index:2;border:none;border-bottom:2px solid #a7a7a7;border-collapse:collapse;margin:0 auto;width:100%;font-size:12px}table#vsTable_104531 td{padding:10px 0;border-right:1px solid #b7b7b7;vertical-align:middle;text-align:center;background:#fff !important;color:#707070}table#vsTable_104531 td:first-child{border-left:1px solid #b7b7b7}table#vsTable_104531 tr.second td{background:#f3f3f3 !important}table#vsTable_104531 tr td div{text-align:center}table#vsTable_104531 tr td div.yes,table#vsTable_104531 tr td div.no,table#vsTable_104531 tr td div.partial{height:16px}table#vsTable_104531 tr td.cat div,table#vsTable_104531 tr td.title div{height:auto}table#vsTable_104531 td.cat div{text-align:left;padding:0 10px}table#vsTable_104531 td.title{background:#fff;border-bottom:1px solid #a7a7a7;border-top:1px solid #a7a7a7;font-size:16px;color:#83AF0E;vertical-align:middle;text-align:center}table#vsTable_104531 tr td.title:hover{background:#fff}table#vsTable_104531 .cat{text-align:left;color:#404040;border-left:1px solid #a7a7a7}table#vsTable_104531 td.title.cat{background:none !important;border:none;border-bottom:1px solid #c7c7c7;border-right:1px solid #b7b7b7;cursor:default !important}table#vsTable_104531 td.title.cat div{display:none}table#vsTable_104531 td a{color:#4e8e12;text-decoration:underline}table#vsTable_104531 a.tableButton{text-decoration:none !important;display:inline-block;font-size:14px;margin:4px;padding:8px 15px;border-radius:50em;color:#fff;text-shadow:1px 1px 0 #739e07;border:1px solid #739e07;box-shadow:inset 0 1px 0 #95c912,0 0 0 4px #fff,0 1px 2px 4px #c7c7c7;background:#83AF0E;background:-moz-linear-gradient(top,#83AF0E 0%,#739e07 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#83AF0E),color-stop(100%,#739e07));background:-webkit-linear-gradient(top,#83AF0E 0%,#739e07 100%);background:-o-linear-gradient(top,#83AF0E 0%,#739e07 100%);background:-ms-linear-gradient(top,#83AF0E 0%,#739e07 100%);background:linear-gradient(top,#83AF0E 0%,#739e07 100%)}table#vsTable_104531 a.tableButton.big{font-size:20px;padding:12px 20px}table#vsTable_104531 a.tableButton.small{font-size:12px;padding:6px 10px}table#vsTable_104531 a.tableButton:hover{background:#739e07;background:-moz-linear-gradient(top,#739e07 0%,#83AF0E 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#739e07),color-stop(100%,#83AF0E));background:-webkit-linear-gradient(top,#739e07 0%,#83AF0E 100%);background:-o-linear-gradient(top,#739e07 0%,#83AF0E 100%);background:-ms-linear-gradient(top,#739e07 0%,#83AF0E 100%);background:linear-gradient(top,#739e07 0%,#83AF0E 100%)}table#vsTable_104531 div.yes{background:url(https://www.compareninja.com/template/skins/Green%20Apple/images/yes.png) no-repeat center center}table#vsTable_104531 div.no{background:url(https://www.compareninja.com/template/skins/Green%20Apple/images/no.png) no-repeat center center}table#vsTable_104531 div.partial{background:url(https://www.compareninja.com/template/skins/Green%20Apple/images/partial.png) no-repeat center center}table#vsTable_104531 .rating div.rates{background:url(https://www.compareninja.com/template/skins/Green%20Apple/images/rating_stars.png) no-repeat center top;width:110px;height:21px;margin:0 auto}table#vsTable_104531 .rating div.rate2{background-position:center -23px}table#vsTable_104531 .rating div.rate3{background-position:center -46px}table#vsTable_104531 .rating div.rate4{background-position:center -69px}table#vsTable_104531 .rating div.rate5{background-position:center -92px}table#vsTable_104531 .rating div.rate6{background-position:center -115px}table#vsTable_104531 .titleImage{padding:0;margin:0;border:none;width:100%;height:auto}table#vsTable_104531 .title .editable input{color:#83AF0E}@media screen and (max-width:600px){table#vsTable_104531{border-bottom:none}table#vsTable_104531 tr td{border:1px solid #ccc;border-bottom:none;border-top:none}table#vsTable_104531 tr td:first-child{border-top:1px solid #a7a7a7}table#vsTable_104531 tr td:last-child{margin-bottom:10px;border-bottom:1px solid #ccc}table#vsTable_104531 tr td.cat,table#vsTable_104531 tr.second .cat{background:#fff;border:1px solid #a7a7a7;font-size:16px;color:#83AF0E}}#tableWrapper{position:relative;overflow:auto} table#vsTable_104531 #vsTable_104531Title{margin:0;padding:0 10px;text-shadow:1px 1px 0 rgba(255,255,255,0.15)} table#vsTable_104531 td.text .big{font-size:32px}table#vsTable_104531 td.text .medium{font-size:18px}table#vsTable_104531 td p{line-height:1.7em;margin-bottom:0;margin-top:0}table#vsTable_104531 td.title > div{position:relative}table#vsTable_104531 tr td > div{padding:0 10px;line-height:1.7em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box} table#vsTable_104531 td.image div.image img{display:block;max-width:90%;margin:0 auto 5px}table#vsTable_104531 td.image div.image span{display:block;padding:0 5px;line-height:20px} table#vsTable_104531 .sorter_arrow{text-decoration:none !important;width:12px;height:12px;position:absolute;right:5px;top:50%;margin-top:-5px;background:url(https://www.compareninja.com/template/skins/images/sorter_arrow.png) no-repeat center top}table#vsTable_104531 .sorter_arrow.sorted{background-position:center bottom} #tableWrapper tr td .cn_tooltip{position:relative;width:18px;height:18px;display:inline-block;margin-left:5px;font-family:"Lucida Grande",Arial;-webkit-box-sizing:unset;-moz-box-sizing:unset;-ms-box-sizing:unset;box-sizing:unset}#tableWrapper tr td .yes .cn_tooltip,#tableWrapper tr td .no .cn_tooltip,#tableWrapper tr td .partial .cn_tooltip{margin-left:50px}#tableWrapper tr td .rates .cn_tooltip{margin-left:115px;margin-top:2px}#tableWrapper tr td .paypal .cn_tooltip{margin-top:5px}#tableWrapper tr td div.cn_tooltip_qm{color:#fff;background:#555;width:10px;height:10px !important;line-height:12px !important;font-size:12px;border-radius:50em;padding:4px;text-align:center;cursor:pointer;text-shadow:none;font-style:normal;-webkit-box-sizing:initial;-moz-box-sizing:initial;-ms-box-sizing:initial;box-sizing:initial}#tableWrapper tr td div.cn_tooltip_qm:hover{background:#222}#tableWrapper tr td div.cn_tooltip_content{display:none;position:absolute;z-index:10;left:35px;top:-10px;width:200px;background:#222;box-shadow:1px 1px 2px rgba(0,0,0,0.2);padding:10px;border-radius:3px;color:#fff;text-align:left;font-size:12px;line-height:18px;text-shadow:none;font-style:normal}#tableWrapper tr td div.cn_tooltip_content::before{position:absolute;top:11px;left:-16px;border:solid transparent;content:" ";height:0;width:0;pointer-events:none;border-right-color:#222;border-width:8px}#tableWrapper tr td div.cn_tooltip_content.top{left:50%;margin-left:-105px;top:auto;bottom:30px}#tableWrapper tr td div.cn_tooltip_content.top:before{top:100%;left:50%;margin-left:-14px;border-top-color:#222;border-right-color:transparent}#tableWrapper tr td div.cn_tooltip_content.bottom{left:50%;margin-left:-105px;top:30px}#tableWrapper tr td div.cn_tooltip_content.bottom:before{top:auto;bottom:100%;left:50%;margin-left:-14px;border-bottom-color:#222;border-right-color:transparent}#tableWrapper tr td div.cn_tooltip_content.left{left:auto;right:35px}#tableWrapper tr td div.cn_tooltip_content.left:before{left:100%;top:11px;border-left-color:#222;border-right-color:transparent}#tableWrapper tr td div.cn_tooltip_qm:hover + div.cn_tooltip_content{display:block} .compareninja_ribbon{display:block;z-index:10;width:100px;height:105px;position:absolute;right:1px;bottom:2px;background:url(https://compareninja.com/public/images/ribbon_small.png) no-repeat;opacity:0.6;-webkit-transition:opacity 0.3s ease 0s;-moz-transition:opacity 0.3s ease 0s;transition:opacity 0.3s ease 0s}.compareninja_ribbon:hover{opacity:1} @media screen and (max-width:600px){#tableWrapper{overflow:visible}table#vsTable_104531 tbody tr:first-child{display:none}table#vsTable_104531 tbody td.cat:before{display:none}table#vsTable_104531 tbody tr td.cat > div{width:100% !important;text-align:center !important}table#vsTable_104531 tbody td{width:100% !important;display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}table#vsTable_104531 tbody td .titleImage{display:block;margin:0 auto}#tableWrapper tr td .cn_tooltip{float:left;margin-left:0 !important}table#vsTable_104531 a.tableButton{text-align:center}table#vsTable_104531 tbody td > div{display:inline-block;width:45% !important;text-align:right !important;vertical-align:middle;background-position-x:right !important;overflow:hidden}table#vsTable_104531 tbody td > div img{width:auto !important;height:auto !important;max-width:90%}table#vsTable_104531 tbody td:before{content:attr(data-th);display:inline-block;width:50%;text-align:left;vertical-align:middle}}</style><script src="https://platform.twitter.com/js/button.a1287ca71ce6e06bb8d64fd87cd04244.js" async="" charset="utf-8" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style>
+</head>
+
+<body class="header-fixed header-fixed-space">
+	<div class="wrapper">
+
+		<!--=== Header v6 ===-->
+		<div class="header-v6 header-classic-white header-sticky">
+			<!-- Navbar -->
+			<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="menu-container">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Navbar Brand -->
+						<div class="navbar-brand">
+							<a href="index.html">
+								<img class="shrink-logo" src="images/beapi_logo.png" alt="BeAPI_logo">
+							</a>
+						</div>
+						<!-- ENd Navbar Brand -->
+
+						<!-- Header Inner Right -->
+
+						<!-- End Header Inner Right -->
+					</div>
+
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
+						<div class="menu-container">
+							<ul class="nav navbar-nav">
+								<!-- Home -->
+								<li class="dropdown">
+									<a href="what_we_do.html" class="dropdown-toggle">
+										What We Do
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="what_we_do.html#apidev">Simplified API Development</a></li>
+										<li><a href="what_we_do.html#deployment">Automated Deployment</a></li>
+										<li><a href="what_we_do.html#manage">API Management</a></li>
+										<li><a href="unique.html">What Makes Us Unique</a></li>
+										<li><a href="faq.html">FAQ</a></li>
+									</ul>
+								</li>
+								<!-- End Home -->
+
+								<!-- Home -->
+								<li class="dropdown active">
+									<a href="services.html" class="dropdown-toggle">
+										Services
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="One-Pages/Classic/index.html">Small Instance</a></li>
+										<li><a href="One-Pages/Classic/one_page_dark.html">Medium Instance</a></li>
+										<li><a href="One-Pages/Classic/one_page_home1.html">Large Instance</a></li>
+										<li><a href="One-Pages/Classic/one_page_home1.html">Extra Large Instance</a></li>
+										<li><a href="One-Pages/Classic/one_page_home1.html">Plan Comparison</a></li>
+									</ul>
+								</li>
+								<!-- End Home -->
+
+								<!-- Pages -->
+								<li class="dropdown">
+									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+										Support
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="http://beapi.freeforums.net/">Free</a></li>
+										<li><a href="page_about3.html">Basic</a></li>
+										<li><a href="page_about1.html">Silver</a></li>
+										<li><a href="page_about.html">Gold</a></li>
+										<li><a href="page_about_me.html">Platinum</a></li>
+										<li><a href="page_about_me1.html">Support Plan Comparison</a></li>
+									</ul>
+								</li>
+								<!-- End Pages -->
+
+								<!-- Blog -->
+								<li class="dropdown">
+									<a href="about.html" class="dropdown-toggle">
+										About
+									</a>
+									<ul class="dropdown-menu">
+										<li><a href="about.html#our_company">Our Company</a></li>
+										<li><a href="about.html#feedback">Industry Feedback</a></li>
+										<li><a href="about.html#team">The Team</a></li>
+										<li><a href="about.html#contact">Contact Us</a></li>
+									</ul>
+								</li>
+								<!-- End Blog -->
+
+<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle">Demo</a></li>
+
+<li class="dropdown">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle">Login</a></li>
+								<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle">Register</a></li>
+							</ul>
+						</div>
+					</div><!--/navbar-collapse-->
+				</div>
+			</div>
+			<!-- End Navbar -->
+		</div>
+		<!--=== End Header v6 ===-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!--=== Parallax About Block ===-->
+		<div class="container content-md">
+<div id="tableWrapper">
+<table id="vsTable_104531">
+	<tbody class="" style="">
+		<tr style="" class="">
+			<td class="cat title" style="width: 25%;"></td>
+			<td class="title" style="width: 25%; display: table-cell;"><div class="">Small Instance</div></td>
+			<td class="title" style="width: 25%;"><div class="">Medium Instance</div></td>
+			<td class="title" style="width: 25%;"><div class="">Large Instance</div></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class=""># of CPU's</div></td>
+			<td data-th="S" style="width: 25%;" class="text"><div><p>2</p></div></td>
+			<td data-th="M" style="width: 25%;" class=""><div><p>2</p></div></td>
+			<td data-th="L" style="width: 25%;" class=""><div><p>4</p></div></td>
+		</tr>
+		<tr style="">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">GB's of RAM</div></td>
+			<td data-th="S" style="width: 25%;" class="text"><div><p>4</p></div></td>
+			<td data-th="M" style="width: 25%;" class=""><div><p>4</p></div></td>
+			<td data-th="L" style="width: 25%;" class=""><div><p>16</p></div></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Licenses(# of Users)</div></td>
+			<td data-th="S" style="width: 25%;" class="text"><div><p>1</p></div></td>
+			<td data-th="M" style="width: 25%;" class=""><div><p>5</p></div></td>
+			<td data-th="L" style="width: 25%;" class=""><div><p>20</p></div></td>
+		</tr>
+		<tr style="">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Web Based IDE</div></td>
+			<td data-th="S" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Integrated Security using OAUTH</div></td>
+			<td data-th="S" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Security Management</div></td>
+			<td data-th="S" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Configuration Management</div></td>
+			<td data-th="S" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Automated Test Generation</div></td>
+			<td data-th="S" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Automated API Docs Generation</div></td>
+			<td data-th="S" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">One Click Build/Test/Deploy</div></td>
+			<td data-th="S" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Proxy</div></td>
+			<td data-th="S" style="width: 25%;" class="no-symbol"></td>
+			<td data-th="M" style="width: 25%;" class=""><div><p>Shared</p></div></td>
+			<td data-th="L" style="width: 25%;" class=""><div><p>Dedicated</p></div></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Message Queue</div></td>
+			<td data-th="S" style="width: 25%;" class="no-symbol"></td>
+			<td data-th="M" style="width: 25%;" class=""><div><p>Shared</p></div></td>
+			<td data-th="L" style="width: 25%;" class=""><div><p>Dedicated</p></div></td>
+		</tr>
+		<tr style="">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">API Reporting</div></td>
+			<td data-th="S" style="width: 25%;" class="no-symbol"></td>
+			<td data-th="M" style="width: 25%;" class=""><div><p>Basic</p></div></td>
+			<td data-th="L" style="width: 25%;" class=""><div><p>Advanced</p></div></td>
+		</tr>
+		<tr style="" class="second">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Webhooks</div></td>
+			<td data-th="S" style="width: 25%;" class="no-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+		<tr style="">
+			<td data-th="" class="cat" style="width: 25%;"><div class="">Batch Jobs</div></td>
+			<td data-th="S" style="width: 25%;" class="no-symbol"></td>
+			<td data-th="M" style="width: 25%;" class="yes-symbol"></td>
+			<td data-th="L" style="width: 25%;" class="yes-symbol"></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+		</div>
+		<!--=== End Parallax About Block ===-->
+
+
+
+
+
+			<!--=== Footer v6 ===-->
+			<div id="footer-v1" class="footer-v1">
+				<div class="footer">
+					<div class="container">
+						<div class="row">
+						<!-- About -->
+						<div class="col-md-3 md-margin-bottom-40">
+							<a href="index.html"><img id="logo-footer" class="footer-logo" src="images/beapi_logo_grey.png" alt=""></a>
+							<p>Copyright © 2014-2016 - All Rights Reserved</p>
+						</div><!--/col-md-3-->
+						<!-- End About -->
+
+							<!-- Recent News -->
+							<div class="col-md-3 sm-margin-bottom-40">
+								<div class="heading-footer"><h2>Recent News</h2></div>
+								<ul class="list-unstyled link-news">
+									<li>
+										<a href="#">Apple Conference</a>
+										<small>12 July, 2014</small>
+									</li>
+									<li>
+										<a href="#">Bootstrap Update</a>
+										<small>12 July, 2014</small>
+									</li>
+									<li>
+										<a href="#">Themeforest Templates</a>
+										<small>12 July, 2014</small>
+									</li>
+								</ul>
+							</div>
+							<!-- End Recent News -->
+
+							<!-- Useful Links -->
+							<div class="col-md-3 sm-margin-bottom-40">
+								<div class="heading-footer"><h2>Useful Links</h2></div>
+								<ul class="list-unstyled footer-link-list">
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="#">Services</a></li>
+									<li><a href="#">Support</a></li>
+									<li><a href="#">Contact Us</a></li>
+								</ul>
+							</div>
+							<!-- End Useful Links -->
+
+							<!-- Contacts -->
+							<div class="col-md-3">
+								<div class="heading-footer"><h2>Contacts</h2></div>
+								<ul class="list-unstyled contacts">
+									<li>
+										<i class="radius-3x fa fa-map-marker"></i>
+										795 Folsom Ave, Suite 600,
+										San Francisco, CA 94107
+									</li>
+									<li>
+										<i class="radius-3x fa fa-phone"></i>
+										(+123) 456 7890<br>
+										(+123) 456 7891
+									</li>
+									<li>
+										<i class="radius-3x fa fa-globe"></i>
+										<a href="#">toronto@gmail.com</a><br>
+										<a href="#">www.toronto.com</a>
+									</li>
+								</ul>
+							</div>
+							<!-- End Contacts -->
+						</div>
+					</div><!--/container -->
+				</div>
+
+				<div class="copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 sm-margon-bottom-10">
+								<ul class="list-inline terms-menu">
+									<li class="silver">Copyright © 2014-2016 - All Rights Reserved</li>
+									<li><a href="#">Terms of Use</a></li>
+									<li><a href="#">Privacy and Policy</a></li>
+									<li><a href="#">License</a></li>
+									<li><a href="#">Support</a></li>
+								</ul>
+							</div>
+							<div class="col-md-4">
+								<ul class="list-inline dark-social pull-right space-bottom-0">
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="#">
+											<i class="fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="#">
+											<i class="fa fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Vine" href="#">
+											<i class="fa fa-vine"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Google plus" href="#">
+											<i class="fa fa-google-plus"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Pinterest" href="#">
+											<i class="fa fa-pinterest"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Instagram" href="#">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Tumblr" href="#">
+											<i class="fa fa-tumblr"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Youtube" href="#">
+											<i class="fa fa-youtube"></i>
+										</a>
+									</li>
+									<li>
+										<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Soundcloud" href="#">
+											<i class="fa fa-soundcloud"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--=== End Footer v6 ===-->
+		</div><!--/End Wrapepr-->
+
+
+
+		<!-- JS Global Compulsory -->
+		<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+		<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<!-- JS Implementing Plugins -->
+		<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+		<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+		<script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
+		<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+		<script type="text/javascript" src="assets/plugins/gmap/gmap.js"></script>
+		<!-- JS Customization -->
+		<script type="text/javascript" src="assets/js/custom.js"></script>
+		<!-- JS Page Level -->
+		<script type="text/javascript" src="assets/js/app.js"></script>
+		<script type="text/javascript" src="assets/js/pages/page_contacts.js"></script>
+		<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
+		<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				App.init();
+				App.initParallaxBg();
+				ContactPage.initMap();
+				OwlCarousel.initOwlCarousel();
+				StyleSwitcher.initStyleSwitcher();
+			});
+		</script>
+<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+	<script src="assets/plugins/html5shiv.js"></script>
+	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+	<![endif]-->
+
+</body>
+</html>

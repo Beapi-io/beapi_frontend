@@ -13,8 +13,8 @@
             <!-- Navbar Brand -->
             <div class="navbar-brand">
                 <a href="index.html">
-                    <img class="default-logo" src="assets/img/logo3-light.png" alt="Logo">
-                    <img class="shrink-logo" src="assets/img/logo3-dark.png" alt="Logo">
+                    <img class="default-logo" src="assets/img/beapi_logo.png" alt="Logo">
+                    <img class="shrink-logo" src="assets/img/beapi_logo.png" alt="Logo">
                 </a>
             </div>
             <!-- ENd Navbar Brand -->
@@ -22,25 +22,37 @@
 
         <script>
         // onsubmit="submitLogin(this.username.value,this.password.value);"
-        $('#sky-form2').submit(function (event) {
+
+        $('#sky-form2,#sky-form3').submit(function (event) {
             event.preventDefault();
-            var jsonData = { "username":$('#username').val(), "password":$('#password').val() };
-            var username = $('#username').val();
-            var password = $('#password').val();
+            var jsonData = {"username":$('#username').val(),"password":$('#password').val() };
 
             $.ajax({
                 type: 'POST',
-                url: window.url+"/api/login",
+                url: window.url + "/api/login",
                 cache:false,
-                crossDomain: true,
+                async:true,
+                contentType: 'application/json',
                 data: JSON.stringify(jsonData),
-                contentType:  'application/json; charset=utf-8',
-                dataType: "json",
+                //dataType:'json',
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
+                xhrFields:{
+                    withCredentials: true
+                },
+                crossDomain: true,
+        	    error: function (xhr, textStatus, thrownError){
+            	    console.log('error: ' + xhr.responseText);
+        	    },
+        	    success: function (data, textStatus, xhr){
+			        console.log('success');
+        	    },
+        	    complete: function (xhr, textStatus) {
+                    console.log('complete');
+        	    }
             }).done(function(data, textStatus, jqXHR) {
-                //console.log(window.url+"/api/login");
-                //console.log(jqXHR.responseText);
-                //console.log(data);
-                //console.log(textStatus);
+		        console.log('done')
                 var obj = JSON.parse(jqXHR.responseText);
                 localStorage.setItem('orp_token', JSON.stringify(obj));
 
@@ -58,11 +70,30 @@
                 }else{
                     header = "common/nologin_header.html";
                 }
+
                 $("#orp_header").load(header);
                 location.reload();
             }).fail(function(jqXHR, textStatus, errorThrown) {
-                alert('Wrong credentials, try again!');
-            });
+                console.log('fail'+textStatus);
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connected.Verify Network.'+window.url+'.Error:'+errorThrown;
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]\n' + jqXHR.responseText;
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].\n' + jqXHR.responseText;
+                } else if (exception === 'parsererror') {
+                    msg = 'Bad Credentials. Please Try Again';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+            })
+
         });
         </script>
         <!-- Collect the nav links, forms, and other content for toggling -->

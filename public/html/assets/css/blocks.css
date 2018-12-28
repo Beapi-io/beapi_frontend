@@ -7,7 +7,7 @@
 */
 
 /*[-----*** TABLE OF CONTENT ***-----]
-breadcrumbs
+
 1. Promo Blocks
 2. Breadcrumbs
   2.1 - Breadcrumbs v1
@@ -247,7 +247,7 @@ breadcrumbs
 /*Default Breadcrumbs*/
 .breadcrumbs {
   overflow: hidden;
-  padding: 0px 0 0px;
+  padding: 10px 0 6px;
   border-bottom: solid 1px #eee;
   background: url(../img/patterns/breadcrumbs.png) repeat;
 }
@@ -435,7 +435,7 @@ breadcrumbs
 ------------------------------------*/
 .breadcrumbs-v3 {
   z-index: 1;
-  padding: 100px 0;
+  padding: 50px 0;
   position: relative;
 }
 
@@ -444,7 +444,7 @@ breadcrumbs
 }
 
 .breadcrumbs-v3.img-v1 {
-  background: url(../img/breadcrumbs/img1.jpg) no-repeat;
+  background: url(../img/bg/16.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
 }
@@ -2445,7 +2445,7 @@ breadcrumbs
 	[16. Parallax Counter]
 ----------------------------------------------------*/
 .parallax-bg {
-  background: url(../img/patterns/5.png) repeat fixed;
+
 }
 
 /*Parallax Counter
@@ -3553,10 +3553,10 @@ breadcrumbs
 ------------------------------------*/
 .interactive-slider-v2 {
   z-index: 1;
-  padding: 120px 0 30px 0;
+  padding: 200px 0;
   position: relative;
   text-align: center;
-  background: url(../img/bg/30.jpg) no-repeat;
+  background: url(../img/bg/18.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
 }
@@ -3583,8 +3583,8 @@ breadcrumbs
   background-position: center center;
 }
 
-.interactive-slider-v2.img-v4 {.interactive-slider-v2
-  background: url(../img/bg/30.jpg) no-repeat;
+.interactive-slider-v2.img-v4 {
+  background: url(../img/bg/img9.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
 }
@@ -7582,7 +7582,7 @@ ul.labels-demo li {
 }
 
 .banner-info.dark i {
-	background: #555;
+	background: #72c02c;
 }
 
 .banner-info h3 {

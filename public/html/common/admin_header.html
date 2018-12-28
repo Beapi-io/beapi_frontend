@@ -20,15 +20,15 @@
 			},
 		  	dataType:"text json",
 		  	success: function(json) {
-                localStorage.removeItem('orp_token');
-                $("#orp_header").load("common/nologin_header.html");
-                location.reload();
+                		localStorage.removeItem('orp_token');
+                		$("#orp_header").load("common/nologin_header.html");
+                		location.reload();
 		  	},
-           error: function(jqXHR, textStatus, errorThrown) {
-                localStorage.removeItem('orp_token');
-                $("#orp_header").load("common/nologin_header.html");
-                location.reload();
-            },
+           		error: function(jqXHR, textStatus, errorThrown) {
+                		localStorage.removeItem('orp_token');
+                		$("#orp_header").load("common/nologin_header.html");
+                		location.reload();
+            		},
 		});
 	};
 </script>
@@ -46,8 +46,8 @@
             <!-- Navbar Brand -->
             <div class="navbar-brand">
                 <a href="index.html">
-                    <img class="default-logo" src="assets/img/logo3-light.png" alt="Logo">
-                    <img class="shrink-logo" src="assets/img/logo3-dark.png" alt="Logo">
+                    <img class="default-logo" src="assets/img/beapi_logo.png" alt="Logo">
+                    <img class="shrink-logo" src="assets/img/beapi_logo.png" alt="Logo">
                 </a>
             </div>
             <!-- ENd Navbar Brand -->
@@ -68,14 +68,24 @@
                     <!-- Reports -->
                     <li class="dropdown">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                            Apps
+                            IO State
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="reports.html?id=8">Reload State</a></li>
+                        </ul>
+                    </li>
+                    <!-- End Reports -->
+
+                    <!-- Tools -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                        	Stats
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="apidocs.html">Api Docs</a></li>
                         </ul>
                     </li>
-                    <!-- End Reports -->
-                    
+                    <!-- End Tools -->
 
                     <!-- Admin -->
                     <li class="dropdown">
@@ -83,7 +93,7 @@
                             Hooks
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="hooks.html">User Hooks</a></li>
+                            <li><a href="hooks.html">My Hooks</a></li>
                             <li><a href="hook_create.html">Create Hook</a></li>
                         </ul>
                     </li>

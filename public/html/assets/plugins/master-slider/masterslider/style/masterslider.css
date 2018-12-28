@@ -1,4 +1,4 @@
-/**
+/** 
  *  Master Slider
  * 	Core css file
  */
@@ -9,7 +9,7 @@
 	-moz-transform: translate3d(0 , 0 , 0);
 }
 
-.master-slider a {
+.master-slider a { 
 	-webkit-transition: none;
 	-o-transition: none;
 	transition: none;
@@ -70,7 +70,7 @@
 .ms-ie .ms-grab-cursor{cursor: move;}
 .ms-ie .ms-grabbing-cursor {cursor: move;}
 
-.ms-view {
+.ms-view { 
 	margin:0px auto;
 	overflow:hidden;
 	background:black;
@@ -106,7 +106,7 @@
 	width: 100%;
 }
 
-.ms-slide .ms-slide-link {
+.ms-slide .ms-slide-link { 
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -144,24 +144,9 @@
 	user-select:none;
 }
 
-.ms-slide .ms-layer,
-.ms-fixed-layers .ms-layer,
-.ms-overlay-layers .ms-layer {
-    position:absolute;
-    pointer-events: auto;
-}
-
-.ms-layer-mask {
-    position: absolute;
-    overflow: hidden;
-}
-
-.ms-layer-mask .ms-layer{
-    position: relative;
-}
+.ms-slide .ms-layer, .ms-fixed-layers .ms-layer {position:absolute;pointer-events: auto}
 
 .ms-slide .ms-slide-layers,
-.ms-overlay-layers .ms-slide-layers,
 .ms-fixed-layers {
 	position: absolute;
 	overflow:hidden;
@@ -203,18 +188,7 @@
 /*.ms-scroll-parallax .ms-sl-selected .ms-scroll-parallax-cont,
 .ms-scroll-parallax .ms-sl-selected .ms-slide-bgcont{}
 .ms-scroll-parallax .ms-slide-bgcont{}*/
-
-/* ------------------------------------------------------------------------------ */
-/* Overlayer layers */
-.ms-overlay-layers {
-    position: absolute;
-    top: 0;
-    z-index: 120;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
+ 
 /*-----------------------------------------------------------*/
 .ms-action-layer{cursor: pointer;}
 .ms-btn-container{position: absolute;}
@@ -238,7 +212,7 @@
 
 
 .ms-btn-s{
-    padding: 14px 17px;
+    padding: 14px 17px;  
     font-size: 80%;
     line-height: 0;
 }
@@ -253,7 +227,7 @@
 }
 
 .ms-btn-l{
-    padding: 17px 50px;
+    padding: 17px 50px;  
     font-size: 120%;
 }
 
@@ -377,8 +351,8 @@
 .ms-tabs.ms-dir-h .ms-thumb-frame {margin-top: 12px;}
 .ms-tabs.ms-dir-v .ms-thumb-frame {margin-left: 12px;}
 .ms-tabs.ms-dir-v.ms-align-left .ms-thumb-frame {margin-left: 0px;}
-.ms-tabs.ms-dir-h.ms-align-top {z-index: 140;}
-.ms-tabs.ms-dir-h.ms-align-top  .ms-thumb-frame{margin-top: -12px;}
+.ms-tabs.ms-dir-h.ms-align-top {z-index: 140;} 
+.ms-tabs.ms-dir-h.ms-align-top  .ms-thumb-frame{margin-top: -12px;} 
 .ms-tabs .ms-thumb{padding: 20px 20px;}
 .ms-tabs .ms-thumb-frame-selected {	opacity: 1; background: #EDEDED;}
 .ms-tabs .ms-thumb-frame .ms-thumb-ol {

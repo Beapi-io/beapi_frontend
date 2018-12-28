@@ -3,8 +3,10 @@
 				type:'GET',
 				url: window.url+"/v0.1/apidoc/show",
 				crossDomain: true,
-				cache:false,
-                xhrFields: {
+                cache:false,
+                async:true,
+                contentType: 'application/json',
+                xhrFields:{
                     withCredentials: false
                 },
 				beforeSend: function(request){
@@ -74,7 +76,7 @@
 
                                 if(hookRoleExists){
                                  out += `               <div class='col-md-1'>
-                                                            <div><button onclick='location.href='hook_create.html?k2=`+key2+`&k3=`+key3+`' type='button' class='btn btn-primary'>Hook</button></div>
+                                                            <div><button onclick="location.href='hook_create.html?k2=`+key2+`&k3=`+key3+`'" type='button' class='btn btn-primary'>Hook</button></div>
                                                         </div>`;
                                 }
 

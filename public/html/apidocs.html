@@ -3,7 +3,7 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>Beapi Admin Console</title>
+	<title>Orp Reporting Project > API Docs</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -77,7 +77,7 @@
 <body class="header-fixed">
 <div class="wrapper">
 	<!--=== Header v6 ===-->
-	<div id="header" class="header-v6 header-white-transparent header-sticky">
+	<div id="orp_header" class="header-v6 header-white-transparent header-sticky">
 	</div>
 	<!--=== End Header v6 ===-->
 
@@ -102,7 +102,7 @@
 	</div><!--/end container-->
 
 	<!--=== Footer Version 1 ===-->
-	<div id="footer" class="footer-v1">
+	<div id="orp_footer" class="footer-v1">
 	</div>
 	<!--=== End Footer Version 1 ===-->
 </div><!--/wrapper-->
@@ -134,7 +134,7 @@
 		var header = null;
 		var footer = null;
 		if(localStorage.getItem('orp_token')!=null){
-			header = "common/header.html"
+			header = "common/orp_header.html"
 			var test = localStorage.getItem('orp_token');
 			var json = JSON.parse(test)
 			var test2 = $.inArray('ROLE_ADMIN',json.authorities);
@@ -144,10 +144,10 @@
 		}else{
 			header = "common/nologin_header.html"
 		}
-		footer = "common/footer.html"
+		footer = "common/orp_footer.html"
 		$(function(){
-			$("#header").load(header);
-			$("#footer").load(footer);
+			$("#orp_header").load(header);
+			$("#orp_footer").load(footer);
 		});
 
 		jQuery(document).ready(function() {

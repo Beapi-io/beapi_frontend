@@ -1,5 +1,7 @@
 // Created by: Farukham: (https://github.com/farukham/Bootstrap-Animated-Progress-Bars)
 
+
+
 var ProgressBar = function () {
 
     return {

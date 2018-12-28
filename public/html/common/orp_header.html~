@@ -1,0 +1,110 @@
+<!-- Navbar -->
+<script>
+	function logout() {
+	    var token = localStorage.getItem('orp_token');
+	    console.log("token:"+token);
+        var json = JSON.parse(token);
+        var access_token = json.access_token;
+
+
+		$.ajax({
+			type:'POST',
+			url: window.url+"/api/logout",
+			crossDomain: true,
+			cache:false,
+			xhrFields: {
+				withCredentials: true
+			},
+			beforeSend: function(request){
+				request.setRequestHeader('Authorization','Bearer '+access_token);
+			},
+			headers:{
+				'Content-Type':'application/json',
+			},
+		  	dataType:"text json",
+		  	success: function(json) {
+                localStorage.removeItem('orp_token');
+                $("#orp_header").load("common/nologin_header.html");
+                location.reload();
+		  	},
+		  	error: function(err) {
+				console.log("error",err);
+		  	}
+		});
+	};
+</script>
+<div class="navbar mega-menu" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="menu-container">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Navbar Brand -->
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img class="default-logo" src="assets/img/beapi_logo_grey.png" alt="Logo">
+                    <img class="shrink-logo" src="assets/img/beapi_logo.png" alt="Logo">
+                </a>
+            </div>
+            <!-- ENd Navbar Brand -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-responsive-collapse">
+            <div class="menu-container">
+                <ul class="nav navbar-nav">
+                    <!-- Home -->
+                    <li class="dropdown active">
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <!-- End Home -->
+
+                    <!-- Reports -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="reports.html?id=8">Heat Map</a></li>
+                            <li><a href="reports.html?id=6">One-Way Delay</a></li>
+                            <li><a href="reports.html?id=8">Packet Loss Rate</a></li>
+                            <li><a href="reports.html?id=11">Throughput Subintervals</a></li>
+                            <li><a href="reports.html?id=12">Packet Retransmits</a></li>
+                            <li><a href="reports.html?id=14">Packet Retransmits Subintervals</a></li>
+                        </ul>
+                    </li>
+                    <!-- End Reports -->
+
+                    <!-- Tools -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="apidocs.html">Api Docs</a></li>
+                        </ul>
+                    </li>
+                    <!-- End Tools -->
+
+                    <!-- Login -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" onclick="logout()" class="dropdown-toggle" data-toggle="dropdown">
+                            Logout
+                        </a>
+                    </li>
+                    <!-- End Login -->
+
+
+                </ul>
+            </div>
+        </div><!--/navbar-collapse-->
+    </div>
+</div>
+<!-- End Navbar -->

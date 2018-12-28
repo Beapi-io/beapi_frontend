@@ -1,1 +1,128 @@
 /* Add here all your css styles (customizations) */
+#logo img {
+  margin: 0 auto;
+  height:60px;
+  padding-top: 10px;
+  z-index: 99;
+}
+
+.breadcrumbs.breadcrumbs-light {
+  background:#f4f4f4;
+  padding: 0px; 
+
+}
+
+
+.breadcrumbs {
+  padding: 0px; 
+  border-bottom: solid 10px #EFF7FF;
+}
+
+.breadcrumbs.breadcrumbs-light {
+  background: #393939;
+  border-bottom: 2px solid #EFF7FF;
+  border-top: 2px solid #EFF7FF;
+}
+
+.breadcrumbs h1 {
+  margin-left: 10px;
+}
+.breadcrumbs.breadcrumbs-light h1, .breadcrumbs.breadcrumbs-light a {
+  color: #fff;
+}
+.breadcrumb li.active, .breadcrumb li a:hover {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+.header{
+	border-bottom: 0px;
+}
+.header .navbar-nav > .active > a{
+  color: #ff9900;
+}
+
+.header .navbar-nav > .active > a:link,
+.header .navbar-nav > .active > a:visited,
+.header .navbar-nav > .active > a:hover,
+.header .navbar-nav > .active > a:focus{
+  color: #ff9900;
+}
+
+.header .navbar-nav > li > a:hover, .header .navbar-nav > .active > a {
+  border-bottom: 0px;
+}
+
+.color-beapi {
+  color: #ff9900;
+}
+
+.footer-logo {
+  margin: 17px 0 20px;
+  height: 60px;
+}
+
+
+.da-slider {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.2), 0px -2px 1px #fff;
+  -webkit-transition: background-position 1.4s ease-in-out 0.3s;
+  -moz-transition: background-position 1.4s ease-in-out 0.3s;
+  -o-transition: background-position 1.4s ease-in-out 0.3s;
+  -ms-transition: background-position 1.4s ease-in-out 0.3s;
+  transition: background-position 1.4s ease-in-out 0.3s;
+}
+
+.da-slide p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  width: 100%;
+  top: 100px;
+  color: #555 !important;
+  overflow: hidden;
+
+}
+
+.da-slide h2 {
+  line-height: 25px;
+  top: 60px;
+  z-index: 10;
+  padding: 0;
+  color: #000 !important;
+  margin-top: 5px;
+  text-shadow: none;
+  font-weight: normal;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.da-slide .da-img{
+  top: 30px;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+margin-top: 20px;
+    margin-bottom: 20px;
+}
+.yes-symbol::before {
+    color: rgb(70, 165, 70);
+    content: "✔ ";
+    font-size: 30px;
+    font-weight: normal;
+line-height:50%;
+}
+.no-symbol::before {
+    color: rgb(248, 68, 6);
+    content: "✘ ";
+    font-size: 30px;
+    font-weight: normal;
+line-height:50%;
+}

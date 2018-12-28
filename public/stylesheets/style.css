@@ -1,0 +1,80 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #000000;
+}
+a {
+  color: #ffcc00;
+}
+
+//navbar
+.navbar{
+	padding:0px;
+	margin:0px;
+}
+.navbar-default {
+  background-color: #000000;
+}
+.navbar.navbar-default {
+  background-color: #000000;
+  margin: 0px;
+}
+.navbar.navbar-default ul li a {
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+}
+.navbar.navbar-default .navbar-header a {
+  font-size: 13px;
+  font-weight: bold;
+}
+.navbar.navbar-default .navbar-brand {
+  color: white;
+}
+.navbar.navbar-default .navbar-brand img {
+  margin-left: 23px;
+  width: 40px;
+}
+.navbar.navbar-default .navbar-nav > .active > li > a,
+.navbar.navbar-default .navbar-nav > .active > a:hover,
+.navbar.navbar-default .navbar-nav > .active > a:focus {
+  font-weight: bold;
+}
+.navbar.navbar-default .navbar-nav > .active > a:link,
+.navbar.navbar-default .navbar-nav > .active > a:visited,
+.navbar.navbar-default .navbar-nav > .active > a:hover,
+.navbar.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffcc00;
+}
+.navbar.navbar-default .active {
+  color: #000;
+  font-weight: bold;
+}
+.navbar.navbar-default .navbar-collapse {
+  max-height: 300px;
+}
+.navbar.navbar-default .navbar-collapse li {
+  font-size: 10px;
+}
+.navbar.navbar-default #a {
+  color: red;
+}
+.navbar.navbar-default #b {
+  color: green;
+}
+.navbar.navbar-default #c {
+  color: blue;
+}
+
+
+
+
+#logo img {
+  margin: 0 auto;
+  position:relative;
+  left:10px;
+  top:30px;
+  height: 60px;
+  padding: 0px;
+  z-index: 99;
+}

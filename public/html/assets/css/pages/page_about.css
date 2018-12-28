@@ -2,7 +2,7 @@
 ------------------------------------*/
 .parallax-bg {
   position: relative;
-  background: url(../../img/bg/25.jpg) 50% no-repeat fixed;
+  background: url(../../img/bg/25.jpg) 100% no-repeat fixed;
 }
 
 .parallax-bg:before {

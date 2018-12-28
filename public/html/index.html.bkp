@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Our Services | Unify - Responsive Website Template</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="/css/headers/header-default.css">
+	<link rel="stylesheet" href="/css/footers/footer-v1.css">
+	
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="/plugins/animate.css">
+	<link rel="stylesheet" href="/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/plugins/parallax-slider/css/parallax-slider.css">
+
+	<!-- CSS Page Style -->
+	<link rel="stylesheet" href="/css/pages/page_search.css">
+
+	<!-- Login Page Style -->
+	<link rel="stylesheet" href="assets/plugins/login-signup-modal-window/css/style.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="/css/theme-colors/default.css" id="style_color">
+	<link rel="stylesheet" href="/css/theme-skins/dark.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="/css/custom.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!--=== Header ===-->
+		<div class="header">
+			<div class="container" id="logo">
+
+
+
+				<div class="topbar">
+					<ul class="loginbar pull-right">
+						<li class="cd-log_reg"><a class="cd-signin" href="javascript:void(0);">Login</a></li>
+						<li class="topbar-devider"></li>
+						<li class="cd-log_reg"><a class="cd-signup" href="javascript:void(0);">Register</a></li>
+					</ul>
+				</div>
+				<!-- Logo -->
+				<a href="#">
+					<img src="images/beapi_logo.png" alt="BeAPI_logo">
+				</a>
+				<!-- End Logo -->
+
+				<!-- Toggle get grouped for better mobile display -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="fa fa-bars"></span>
+				</button>
+				<!-- End Toggle -->
+			</div><!--/end container-->
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<!-- Home -->
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+								Services
+							</a>
+							<ul class="dropdown-menu">
+								<li><a target="_blank" href="One-Pages/Classic/index.html">Starter Plan</a></li>
+								<li><a target="_blank" href="One-Pages/Classic/one_page_dark.html">MidTier Plan</a></li>
+								<li><a target="_blank" href="One-Pages/Classic/one_page_home1.html">Enterprise Plan</a></li>
+								<li><a target="_blank" href="One-Pages/Classic/one_page_home3.html">Plan Comparison</a></li>
+							</ul>
+						</li>
+
+
+						<!-- Blog -->
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+								Support
+							</a>
+							<ul class="dropdown-menu">
+								<li><a target="_blank" href="E-Commerce/index.html">Free</a></li>
+								<li><a target="_blank" href="E-Commerce/shop-ui-inner.html">Basic</a></li>
+								<li><a target="_blank" href="E-Commerce/shop-ui-filter-grid.html">Silver</a></li>
+								<li><a target="_blank" href="E-Commerce/shop-ui-filter-list.html">Gold</a></li>
+								<li><a target="_blank" href="E-Commerce/shop-ui-add-to-cart.html">Platinum</a></li>
+							</ul>
+						</li>
+						<!-- End Blog -->
+
+						<!-- Portfolio -->
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+								About Us
+							</a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">No Space Boxed</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_2_columns_grid_no_space.html">2 Columns</a></li>
+										<li><a href="portfolio_3_columns_grid_no_space.html">3 Columns</a></li>
+										<li><a href="portfolio_4_columns_grid_no_space.html">4 Columns</a></li>
+									</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">Grid Boxed</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_2_columns_grid.html">2 Columns</a></li>
+										<li><a href="portfolio_3_columns_grid.html">3 Columns</a></li>
+										<li><a href="portfolio_4_columns_grid.html">4 Columns</a></li>
+									</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">Grid Text Boxed</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_2_columns_grid_text.html">2 Columns</a></li>
+										<li><a href="portfolio_3_columns_grid_text.html">3 Columns</a></li>
+										<li><a href="portfolio_4_columns_grid_text.html">4 Columns</a></li>
+									</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">No Space Full Width</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_2_columns_fullwidth_no_space.html">2 Columns</a></li>
+										<li><a href="portfolio_3_columns_fullwidth_no_space.html">3 Columns</a></li>
+										<li><a href="portfolio_4_columns_fullwidth_no_space.html">4 Columns</a></li>
+										<li><a href="portfolio_5_columns_fullwidth_no_space.html">5 Columns</a></li>
+										<li><a href="portfolio_6_columns_fullwidth_no_space.html">6 Columns</a></li>
+									</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">Grid Full Width</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_2_columns_fullwidth.html">2 Columns</a></li>
+										<li><a href="portfolio_3_columns_fullwidth.html">3 Columns</a></li>
+										<li><a href="portfolio_4_columns_fullwidth.html">4 Columns</a></li>
+										<li><a href="portfolio_5_columns_fullwidth.html">5 Columns</a></li>
+										<li><a href="portfolio_6_columns_fullwidth.html">6 Columns</a></li>
+									</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">Grid Text Full Width</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_2_columns_fullwidth_text.html">2 Columns</a></li>
+										<li><a href="portfolio_3_columns_fullwidth_text.html">3 Columns</a></li>
+										<li><a href="portfolio_4_columns_fullwidth_text.html">4 Columns</a></li>
+										<li><a href="portfolio_5_columns_fullwidth_text.html">5 Columns</a></li>
+										<li><a href="portfolio_6_columns_fullwidth_text.html">6 Columns</a></li>
+									</ul>
+								</li>
+								<li><a href="portfolio_hover_colors.html">Portfolio Hover Colors</a></li>
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">Portfolio Items</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_single_item.html">Single Item</a></li>
+										<li><a href="portfolio_old_item.html">Basic Item 1</a></li>
+										<li><a href="portfolio_old_item1.html">Basic Item 2</a></li>
+									</ul>
+								</li>
+								<li class="dropdown-submenu">
+									<a href="javascript:void(0);">Portfolio Basic Pages</a>
+									<ul class="dropdown-menu">
+										<li><a href="portfolio_old_text_blocks.html">Basic Grid Text</a></li>
+										<li><a href="portfolio_old_2_column.html">Basic 2 Columns</a></li>
+										<li><a href="portfolio_old_3_column.html">Basic 3 Columns</a></li>
+										<li><a href="portfolio_old_4_column.html">Basic 4 Columns</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- End Portfolio -->
+
+					</ul>
+				</div><!--/end container-->
+			</div><!--/navbar-collapse-->
+		</div>
+		<!--=== End Header ===-->
+
+		<!--=== Breadcrumbs ===-->
+		<div class="breadcrumbs breadcrumbs-light">
+			<div class="container">
+				<h1 class="pull-left">Our Services</h1>
+				<ul class="pull-right breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="">Pages</a></li>
+					<li class="active">Services</li>
+				</ul>
+			</div>
+		</div><!--/breadcrumbs-->
+		<!--=== End Breadcrumbs ===-->
+
+		<!--=== Slider ===-->
+		<div class="slider-inner">
+			<div id="da-slider" class="da-slider">
+				<div class="da-slide">
+					<h2>Building API's Can Be Alot Of Trouble...</h2>
+<p>Trying to find, hire and build the team to build your infrastructure
+</br>can be just as difficult as building the project itself... sometimes
+</br>even more so. It can takes months before you even have enough
+</br>people and the <b>mistakes made can all be avoided</b> with a properly
+</br>trained team that is experienced in building these infrastructures
+</br>time and again.</p>
+					<div class="da-img"><img src="images/mockup1.png" style="width:300px;" alt="screenshot"></div>
+				</div>
+				<div class="da-slide">
+					<h2>Architecture Can Make It Double...</h2>
+<p>When building your application, you don't want to have to constantly 
+</br>worry about your architecture and how you're going to scale it and 
+</br>each stage. Your main focus is your maintaining your application and 
+</br>your customers. Things like architecture can easily be handled by a 
+</br>third party of experts that focus on nothing more than building 
+</br>automated functionality and scaling infrastructure. 
+</p>
+					<div class="da-img"><img src="images/ugly_architecture.png" style="width:450px;" alt="ugly architecture" /></div>
+					
+				</div>
+				<div class="da-slide span12" style="width:100%">
+						<div class="da-img span12" style="top:200px;"><img class="img-responsive"src="images/dont_worry.png" alt="dont worry"></div>
+				</div>
+				<div class="da-slide span12" style="width:100%">
+						<div class="da-img span12" style="width:100%"><img class="img-responsive" style="width:250px;" src="images/beapi_logo_large.png" alt="BeAPI_logo"></div>
+				</div>
+				<div class="da-arrows">
+					<span class="da-arrows-prev"></span>
+					<span class="da-arrows-next"></span>
+				</div>
+			</div>
+		</div><!--/slider-->
+		<!--=== End Slider ===-->
+
+	<!--=== Call To Action ===-->
+	<div class="call-action-v1 bg-color-light">
+		<div class="container">
+			<div class="call-action-v1-box">
+				<div class="call-action-v1-in">
+					<p>Unify creative technology company providing key digital services and focused on helping our clients to build a successful business on web and mobile.</p>
+				</div>
+				<div class="call-action-v1-in inner-btn page-scroll">
+					<a href="#portfolio" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-block">REGISTER TODAY</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--=== End Call To Action ===-->
+
+		<!--=== Content Part ===-->
+		<div class="container content-sm">
+			<!-- Service Blocks -->
+			<div class="row margin-bottom-30">
+				<div class="col-md-4">
+					<div class="service">
+						<i class="fa fa-compress service-icon"></i>
+						<div class="desc">
+							<h4>Build</h4>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service">
+						<i class="fa fa-cogs service-icon"></i>
+						<div class="desc">
+							<h4>Configure</h4>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service">
+						<i class="fa fa-rocket service-icon"></i>
+						<div class="desc">
+							<h4>Deploy</h4>
+							<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus etiam sem...</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Service Blokcs -->
+		</div>
+		<!--=== End Content Part ===-->
+
+	<!-- Promo block BEGIN -->
+
+		<!--=== Footer Version 1 ===-->
+		<div class="footer-v1">
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<!-- About -->
+						<div class="col-md-3 md-margin-bottom-40">
+							<a href="index.html"><img id="logo-footer" class="footer-logo" src="images/beapi_logo_grey.png" alt=""></a>
+							<p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
+							<p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
+						</div><!--/col-md-3-->
+						<!-- End About -->
+
+						<!-- Latest -->
+						<div class="col-md-3 md-margin-bottom-40">
+							<div class="posts">
+								<div class="headline"><h2>Latest Posts</h2></div>
+								<ul class="list-unstyled latest-list">
+									<li>
+										<a href="#">Incredible content</a>
+										<small>May 8, 2014</small>
+									</li>
+									<li>
+										<a href="#">Best shoots</a>
+										<small>June 23, 2014</small>
+									</li>
+									<li>
+										<a href="#">New Terms and Conditions</a>
+										<small>September 15, 2014</small>
+									</li>
+								</ul>
+							</div>
+						</div><!--/col-md-3-->
+						<!-- End Latest -->
+
+						<!-- Link List -->
+						<div class="col-md-3 md-margin-bottom-40">
+							<div class="headline"><h2>Useful Links</h2></div>
+							<ul class="list-unstyled link-list">
+								<li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
+							</ul>
+						</div><!--/col-md-3-->
+						<!-- End Link List -->
+
+						<!-- Address -->
+						<div class="col-md-3 map-img md-margin-bottom-40">
+							<div class="headline"><h2>Contact Us</h2></div>
+							<address class="md-margin-bottom-40">
+								25, Lorem Lis Street, Orange <br />
+								California, US <br />
+								Phone: 800 123 3456 <br />
+								Fax: 800 123 3456 <br />
+								Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
+							</address>
+						</div><!--/col-md-3-->
+						<!-- End Address -->
+					</div>
+				</div>
+			</div><!--/footer-->
+
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<p>
+								2015 &copy; All Rights Reserved.
+								<a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+							</p>
+						</div>
+
+						<!-- Social Links -->
+						<div class="col-md-6">
+							<ul class="footer-socials list-inline">
+								<li>
+									<a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+										<i class="fa fa-facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+										<i class="fa fa-skype"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+										<i class="fa fa-google-plus"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+										<i class="fa fa-linkedin"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+										<i class="fa fa-pinterest"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+										<i class="fa fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Dribbble">
+										<i class="fa fa-dribbble"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- End Social Links -->
+					</div>
+				</div>
+			</div><!--/copyright-->
+		</div>
+		<!--=== End Footer Version 1 ===-->
+	</div><!--/wrapper-->
+
+
+	<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- JS Implementing Plugins -->
+	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+	<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+	<script type="text/javascript" src="assets/plugins/parallax-slider/js/modernizr.js"></script>
+	<script type="text/javascript" src="assets/plugins/parallax-slider/js/jquery.cslider.js"></script>
+	<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+	<!-- JS Customization -->
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<!-- JS Page Level -->
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/parallax-slider.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			App.init();
+			OwlCarousel.initOwlCarousel();
+			StyleSwitcher.initStyleSwitcher();
+			ParallaxSlider.initParallaxSlider();
+		});
+	</script>
+<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+	<script src="assets/plugins/html5shiv.js"></script>
+	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+	<![endif]-->
+
+</body>
+</html>

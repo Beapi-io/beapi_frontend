@@ -526,8 +526,7 @@ body.header-fixed-space-default {
 
 /*Submenu comes from LEFT side*/
 .header .dropdown-submenu > .dropdown-menu.submenu-left {
-	left: auto !important;
-  right: 100%;
+	left: -100% !important;
 }
 
 .header .dropdown-submenu:hover > .dropdown-menu {

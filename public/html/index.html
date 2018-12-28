@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-	<title>Beapi Admin Console</title>
+	<title>Orp Reporting Project > API Docs</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -14,8 +12,9 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico">
 	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
 
-	<!-- Config -->
+	<!-- CONFIG -->
 	<script type="text/javascript" src="../../config.js"></script>
 
 	<!-- Web Fonts -->
@@ -33,7 +32,6 @@
 	<link rel="stylesheet" href="assets/plugins/animate.css">
 	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
 	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
 
@@ -44,20 +42,18 @@
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="assets/css/custom.css">
 
-	<script>
-	var SITE_URL = '';
-	var url = null;
-	var jsonToken = null;
 
-	</script>
-
-	<script>
-	var test = localStorage.getItem('orp_token');
-	if(test==null){
-		window.location = "index.html";
+	<style type="text/css">
+	#chartdiv {
+		width: 100%;
+		height: 500px;
 	}
+	</style>
 
-	function init(){
+
+	<script type="text/javascript">
+
+		function getApiDocs() {
 			var loadJS = function(url, implementationCode, location){
 				var scriptTag = document.createElement('script');
 				scriptTag.src = url;
@@ -67,84 +63,71 @@
 
 				location.appendChild(scriptTag);
 			};
-			var reports = function(){
-				initIndex();
+
+			if(localStorage.getItem('orp_token')!=null){
+				var reports = function(){
+					initApiDocs();
+				}
+				loadJS('/assets/js/apidocs.js', reports, document.body);
+			}else{
+				var reports = function(){
+					initIndex();
+				}
+				loadJS('/assets/js/login.js', reports, document.body);
 			}
-			loadJS('/assets/js/account/index.js', reports, document.body);
-	}
+		}
 
 	</script>
 </head>
 
 <body class="header-fixed">
-	<div class="wrapper">
-		<!--=== Header v6 ===-->
-		<div id="header" class="header-v6 header-white-transparent header-sticky">
-		</div>
-		<!--=== End Header v6 ===-->
+<div class="wrapper">
+	<!--=== Header v6 ===-->
+	<div id="orp_header" class="header-v6 header-white-transparent header-sticky">
+	</div>
+	<!--=== End Header v6 ===-->
 
-		<!-- Interactive Slider v2 -->
-		<div class="interactive-slider-v2 img-v4" style="padding: 50px 0 34px 0;">
-			<div class="container">
-				<p> </p>
+	<!-- Interactive Slider v2 -->
+	<div class="interactive-slider-v2 img-v4" style="padding: 50px 0 34px 0;">
+		<div class="container">
+			<p> </p>
+		</div>
+	</div>
+	<!-- End Interactive Slider v2 -->
+
+	<!--=== Content ===-->
+
+	<div class="container content">
+		<div class="row">
+			<!-- Begin Content -->
+			<div id="apidocs" class="col-lg-12">
+
 			</div>
+			<!-- End Content -->
 		</div>
-		<!-- End Interactive Slider v2 -->
+	</div><!--/end container-->
 
-		<!--=== Content ===-->
+	<!--=== Footer Version 1 ===-->
+	<div id="orp_footer" class="footer-v1">
+	</div>
+	<!--=== End Footer Version 1 ===-->
+</div><!--/wrapper-->
 
-		<div class="container content">
-			<div class="row">
-				<!-- Begin Content -->
-				<div class="row-fluid">
-
-					<div class="span12 content_padding">
-
-						<div id="list-webhook" class="content scaffold-list" role="main">
-							<h1 id="acct_title"></h1>
-							<div class="row">
-								<div class="col-md-12">
-
-									<div id="sky-form3" class="sky-form">
-										<fieldset>
-											<section id="accounts" class='col-lg-12'>
-											</section>
-											<section id="apps" class='col-lg-12'>
-											</section>
-										</fieldset>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Content -->
-			</div>
-		</div><!--/end container-->
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="assets/js/xml2json.js"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
 
 
-
-		<!--=== Footer Version 1 ===-->
-		<div id="footer" class="footer-v1">
-		</div>
-		<!--=== End Footer Version 1 ===-->
-	</div><!--/wrapper-->
-
-	<!-- JS Global Compulsory -->
-	<script type="text/javascript" src="assets/js/processing.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/p5/p5.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- JS Implementing Plugins -->
-	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
-	<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
-	<!-- JS Customization -->
-	<script type="text/javascript" src="assets/js/custom.js"></script>
-	<!-- JS Page Level -->
-	<script type="text/javascript" src="assets/js/app.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
-
-
-	<script type="text/javascript">
+<script type="text/javascript">
+	/*
 		var token = localStorage.getItem('orp_token');
 		window.token = JSON.parse(token);
 		window.url = null;
@@ -152,11 +135,12 @@
 		$.getJSON("config.json", function(json) {
 		   window.url = json.URL;
 		});
+*/
 
 		var header = null;
 		var footer = null;
 		if(localStorage.getItem('orp_token')!=null){
-			header = "common/header.html"
+			header = "common/orp_header.html"
 			var test = localStorage.getItem('orp_token');
 			var json = JSON.parse(test)
 			var test2 = $.inArray('ROLE_ADMIN',json.authorities);
@@ -166,23 +150,28 @@
 		}else{
 			header = "common/nologin_header.html"
 		}
-		footer = "common/footer.html"
+		footer = "common/orp_footer.html"
 		$(function(){
-			$("#header").load(header);
-			$("#footer").load(footer);
+			$("#orp_header").load(header);
+			$("#orp_footer").load(footer);
 		});
 
 		jQuery(document).ready(function() {
-			init();
+			getApiDocs();
 			App.init();
 			StyleSwitcher.initStyleSwitcher();
 		});
+
+		var x2js = new X2JS();
+
+
+
 	</script>
 <!--[if lt IE 9]>
-  <script src="assets/plugins/respond.js"></script>
-  <script src="assets/plugins/html5shiv.js"></script>
-  <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-  <![endif]-->
+<script src="assets/plugins/respond.js"></script>
+<script src="assets/plugins/html5shiv.js"></script>
+<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
 
 </body>
 </html>

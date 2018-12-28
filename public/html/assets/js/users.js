@@ -17,6 +17,7 @@
 				dataType:"text json",
 				success: function(json) {
                     console.log(json);
+
 				},
                error: function(jqXHR, textStatus, errorThrown) {
                     if (jqXHR.statusText == 'abort') { return; }

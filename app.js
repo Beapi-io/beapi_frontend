@@ -1,3 +1,4 @@
+#!/usr/bin/env nodejs
 //var express = require('express');
 
 
@@ -107,7 +108,7 @@ app.use(cookieParser());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  //console.log(JSON.stringify(req.headers));
+  console.log(JSON.stringify(req.headers));
   var err = new Error('Not Found');
   console.log(req.route);
   err.status = 404;

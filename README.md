@@ -1,39 +1,36 @@
-# Beapi Frontend for Nodejs
+# ORP-scheduler (frontend)
 
 ## ENVIRONMENT SETUP
 1. Make sure you are using a version of Node.js greater than 6.X
+2. Install PM2 to allow us to start/stop Node as a service.
+```
+sudo npm install pm2 -g
+```
 
 2. change the port that node listens on
 ```
 sudo apt-get install libcap2-bin
-sudo setcap cap_net_bind_service=+ep /usr/bin/nodejs
-```
-
-
-## RUN 
-1. got to the root directory of the project and type the following:
-```
-nodejs app.js
+sudo setcap cap_net_bind_service=+ep /usr/bin/nodejs <--(change if this isn't your node application path)
 ```
 
 ## INSTALLATION (this can all be an install script in future)
 1. add 'orp' user
 ```
-useradd orp -d /home/beapi
+useradd orp -d /home/orp
 ```
 2. move application to /usr/share
 ```
-sudo mkdir /usr/share/beapi
-mv orp_frontend /usr/share/beapi/frontend
+sudo mkdir /usr/share/orp
+mv orp_frontend /usr/share/orp/frontend
 ```
 3. Copy your service file into the /etc/systemd/system.
 4. Start it with:
 ```
-systemctl start beapi_frontend
+systemctl start orp_frontend
 ```
 Enable it to run on boot with:
 ```
-systemctl enable beapi_frontend
+systemctl enable orp_frontend
 ```
 
 Pulling new changes on the server currently rtequires:
