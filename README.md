@@ -2,10 +2,6 @@
 
 ## ENVIRONMENT SETUP
 1. Make sure you are using a version of Node.js greater than 6.X
-2. Install PM2 to allow us to start/stop Node as a service.
-```
-sudo npm install pm2 -g
-```
 
 2. change the port that node listens on
 ```
