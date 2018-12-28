@@ -7,6 +7,11 @@
 ```
 sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep /usr/bin/nodejs <--(change if this isn't your node application path)
+
+## RUN
+1. To run the application, go into the root directory and type the following:
+```
+nodejs app.js
 ```
 
 ## INSTALLATION (this can all be an install script in future)
