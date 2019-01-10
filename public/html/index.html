@@ -53,7 +53,7 @@
 
 	<script type="text/javascript">
 
-		function getApiDocs() {
+		function getStats() {
 			var loadJS = function(url, implementationCode, location){
 				var scriptTag = document.createElement('script');
 				scriptTag.src = url;
@@ -66,9 +66,9 @@
 
 			if(localStorage.getItem('orp_token')!=null){
 				var reports = function(){
-					initApiDocs();
+					initStats();
 				}
-				loadJS('/assets/js/apidocs.js', reports, document.body);
+				loadJS('/assets/js/stats.js', reports, document.body);
 			}else{
 				var reports = function(){
 					initIndex();
@@ -100,7 +100,9 @@
 	<div class="container content">
 		<div class="row">
 			<!-- Begin Content -->
-			<div id="apidocs" class="col-lg-12">
+			<div class="col-lg-12">
+				<canvas id="bar-chart">
+				</canvas>
 
 			</div>
 			<!-- End Content -->
@@ -124,6 +126,8 @@
 <!-- JS Page Level -->
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+
+<script type="text/javascript" src="assets/js/Chart.bundle.js"></script>
 
 
 <script type="text/javascript">
@@ -157,14 +161,10 @@
 		});
 
 		jQuery(document).ready(function() {
-			getApiDocs();
+			getStats();
 			App.init();
 			StyleSwitcher.initStyleSwitcher();
 		});
-
-		var x2js = new X2JS();
-
-
 
 	</script>
 <!--[if lt IE 9]>
