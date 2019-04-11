@@ -18,52 +18,48 @@
 				},
 				dataType:"text json",
 				success: function(json) {
-				    console.log('success');
-				    console.log(json);
 				    var out = "";
                     var count = 1;
+
+					var userLabel = []
+					var userData = []
+
+                    var statLabel = []
+                    var statData = []
+
+                    var codeLabel = []
+                    var codeData = []
+
                     if(json){
-                        console.log(json);
-                        console.log(json.apiTotals);
-					    //$.each(json, function(key,val){})
+
+                        for (var k in json['userTotals']){
+                            userLabel.push(k);
+                            userData.push(json['userTotals'][k]);
+                        }
+
+                        for (var k in json['apiTotals']){
+                            statLabel.push(k);
+                            statData.push(json['apiTotals'][k]);
+                        }
+
+                        for (var k in json['codeTotals']){
+                            codeLabel.push(k);
+                            codeData.push(json['codeTotals'][k]);
+                        }
+
 					}
 
 					var ctx1 = document.getElementById('bar-chart').getContext('2d');
 					new Chart(ctx1, {
                           type: 'line',
                           data: {
-                            labels: ['1AM','2AM','3AM','4AM','5AM','6AM','7AM','8AM','9AM','10AM','11AM','12AM','1PM','2PM','3PM','4PM','5PM','6PM','7PM','8PM','9PM','10PM','11PM','12PM'],
+                            labels: statLabel,
                             datasets: [
                               {
                                 label: "Daily API Statistics",
                                 fill:true,
                                 backgroundColor: ["#3e95cd"],
-                                data: [
-                                    json['apiTotals']['1AM'],
-                                    json['apiTotals']['2AM'],
-                                    json['apiTotals']['3AM'],
-                                    json['apiTotals']['4AM'],
-                                    json['apiTotals']['5AM'],
-                                    json['apiTotals']['6AM'],
-                                    json['apiTotals']['7AM'],
-                                    json['apiTotals']['8AM'],
-                                    json['apiTotals']['9AM'],
-                                    json['apiTotals']['10AM'],
-                                    json['apiTotals']['11AM'],
-                                    json['apiTotals']['12AM'],
-                                    json['apiTotals']['1PM'],
-                                    json['apiTotals']['2PM'],
-                                    json['apiTotals']['3PM'],
-                                    json['apiTotals']['4PM'],
-                                    json['apiTotals']['5PM'],
-                                    json['apiTotals']['6PM'],
-                                    json['apiTotals']['7PM'],
-                                    json['apiTotals']['8PM'],
-                                    json['apiTotals']['9PM'],
-                                    json['apiTotals']['10PM'],
-                                    json['apiTotals']['11PM'],
-                                    json['apiTotals']['12PM']
-                                ]
+                                data: statData
                               }
                             ]
                           },
@@ -71,21 +67,22 @@
                             legend: { display: true },
                             title: {
                               display: true,
-                              text: 'Predicted world population (millions) in 2050'
+                              text: 'Daily API Report'
                             }
                           }
                      });
+
 
 					var ctx2 = document.getElementById('pie-chart1').getContext('2d');
 					new Chart(ctx2, {
                           type: 'pie',
                           data: {
-                            labels: ['Fred','Nancy','Tom','Phil'],
+                            labels: userLabel,
                             datasets: [
                               {
                                 label: "Top 5 Users",
                                 backgroundColor: ['#36a2eb','#cc65fe','#3e95cd','#ff6384'],
-                                data: [2478,5267,734,3895]
+                                data: userData
                               }
                             ]
                           },
@@ -97,16 +94,17 @@
                           }
                      });
 
+
                     var ctx3 = document.getElementById('pie-chart2').getContext('2d');
                     new Chart(ctx3, {
                            type: 'pie',
                            data: {
-                             labels: ['200','400','401','405'],
+                             labels: codeLabel,
                              datasets: [
                                {
                                  label: "Top 5 Return Codes",
                                  backgroundColor: ['#36a2eb','#cc65fe','#3e95cd','#ff6384'],
-                                 data: [2478,50,73,38]
+                                 data: codeData
                                }
                              ]
                            },
@@ -118,26 +116,6 @@
                            }
                       });
 
-                      var ctx4 = document.getElementById('pie-chart3').getContext('2d');
-                      new Chart(ctx4, {
-                             type: 'pie',
-                             data: {
-                               labels: ['200','400','401','405'],
-                               datasets: [
-                                 {
-                                   label: "Top 5 Return Codes",
-                                   backgroundColor: ['#36a2eb','#cc65fe','#3e95cd','#ff6384'],
-                                   data: [2478,50,73,38]
-                                 }
-                               ]
-                             },
-                             options: {
-                               title: {
-                                 display: true,
-                                 text: 'Top 5 Return Codes'
-                               }
-                             }
-                        });
 
                         out += `            <div class='panel panel-grey margin-bottom-40'>
                                                 <div class='panel-heading' style='padding-left:15px;'>
