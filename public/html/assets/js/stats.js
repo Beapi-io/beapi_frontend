@@ -117,45 +117,7 @@
                       });
 
 
-                        out += `            <div class='panel panel-grey margin-bottom-40'>
-                                                <div class='panel-heading' style='padding-left:15px;'>
-                                                    <h3 class='panel-title''>Response Variables</h3>
-                                                </div>
-                                                <div class='panel-body' style='padding:5px;'>
-                                                 <table class='table'>
-                                                     <thead>
-                                                         <tr>
-                                                             <th>Name</th>
-                                                             <th>Type</th>
-                                                             <th>Desc</th>
-                                                         </tr>
-                                                     </thead>
-                                                     <tbody>`;
 
-                        //$.each(val3.returns,function(key6,val6){
-                        //     if(key6=='permitAll' || window.token.authorities.indexof(key6)>=0){
-                        //         $.each(val6,function(key7,val7){
-                        //              out += "                   <tr>";
-                        //              if(val7){
-                        //              out += `                      <td>`+val7.name+`</td>
-                        //                                             <td>`+val7.paramType+`</td>
-                        //                                             <td>`+val7.description+`</td>`;
-                        //              }else{
-                        //                 out += "<td>&nbsp;</td>";
-                        //              }
-                        //              out += "                   </tr>";
-                        //         });
-                        //     }
-                        //});
-
-
-
-                        out += `                        </tbody>
-                                                     </table>
-                                                 </div>
-                                             </div>
-
-                                             <br/>`;
 				},
                error: function(jqXHR, textStatus, errorThrown) {
                     console.log('error');

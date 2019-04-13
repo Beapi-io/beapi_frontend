@@ -20,6 +20,7 @@
 				    var out = "";
                     var count = 1;
                     if(json){
+                    console.log(json);
 					$.each(json, function(key,val){
 
 					    document.getElementById("apidocs").innerHTML = null
