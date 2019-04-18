@@ -20,13 +20,15 @@
 				    var out = "";
                     var count = 1;
                     if(json){
-                    console.log(json);
 					$.each(json, function(key,val){
 
 					    document.getElementById("apidocs").innerHTML = null
 
 						$.each(val, function(key2,val2){
-console.log(val2);
+
+                            var tempPath = val2.path.split("/");
+                            var path = tempPath[2]+"/"+tempPath[3];
+
 							out += `<header style='font-weight:bold;font-size: 16px;'>`+key2.toUpperCase()+`</header>
                                     <div class='panel-group acc-v1' id='accordion-"+count+"'>`;
 							//$.each(val2,function(key3,val3){
@@ -48,9 +50,11 @@ console.log(val2);
 
 
 								var mthd_clr = null;
+								var path_clr = null;
                                 switch(val2.method){
                                     case 'GET':
                                         mthd_clr = '#00CC00';
+                                        path_clr = "#cbf3cb";
                                         break;
                                     case 'PUT':
                                         mthd_clr = '#CCCC00';
@@ -67,9 +71,9 @@ console.log(val2);
                                             <div class='panel-heading'>
                                                 <div class='row panel panel-blue' style='padding:0px;margin-left:0px;margin-right:0px;'>
                                                     <div class='col-md-1' style='padding-top:8px;padding-bottom:8px;background-color:`+mthd_clr+`'>`+val2.method+`</div>
-                                                        <div class='col-md-5'>
+                                                        <div class='col-md-5' style='padding:0px;margin:0px;'>
                                                             <h4 class='panel-title'>
-                                                            <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`'>`+val2.path+`</a>
+                                                            <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`' style='background-color:`+path_clr+`;line-height:2.0;'>`+val2.path+`</a>
                                                             </h4>
                                                         </div>
                                                         <div class='col-md-5' style="padding-top:8px;padding-bottom:8px;">
@@ -90,7 +94,7 @@ console.log(val2);
                                                             <div class='panel-heading'>
                                                                 <h3 class='panel-title' style='padding-left:15px;'>URI</h3>
                                                             </div>
-                                                        <div class='panel-body'>`+val2.path+`</div>
+                                                        <div class='panel-body'>`+path+`</div>
                                                     </div>
                                                     </br>`;
 
@@ -230,8 +234,8 @@ console.log(val2);
                                 out += "                    </div>";
 
                                 out += `                    <div class='form-group col-md-4'>
-                                                                <button type='submit' class='btn-u btn-u-dark' onclick='callApi("`+val2.method+`","`+val2.path+`","`+count+`")'>Call API</button>
-                                                                <button type='submit' class='btn-u btn-u-dark' onclick='generateTemplate("`+val2.method+`","`+val2.path+`","`+count+`")'>Generate JS</button>
+                                                                <button type='submit' class='btn-u btn-u-dark' onclick='callApi("`+val2.method+`","`+path+`","`+count+`")'>Call API</button>
+                                                                <button type='submit' class='btn-u btn-u-dark' onclick='generateTemplate("`+val2.method+`","`+path+`","`+count+`")'>Generate JS</button>
                                                             </div>
                                                         </div>
                                                     </div>
