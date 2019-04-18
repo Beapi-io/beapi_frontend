@@ -26,13 +26,15 @@
 
 						$.each(val, function(key2,val2){
 
-                            var tempPath = val2.path.split("/");
-                            var path = tempPath[2]+"/"+tempPath[3];
+                            var controller = key2;
+
 
 							out += `<header style='font-weight:bold;font-size: 16px;'>`+key2.toUpperCase()+`</header>
                                     <div class='panel-group acc-v1' id='accordion-"+count+"'>`;
-							//$.each(val2,function(key3,val3){
-
+							$.each(val2,function(key3,val3){
+                            var action = key3;
+                            var tempPath = val3.path.split("/");
+                            var path = tempPath[2]+"/"+tempPath[3];
 							    // MATCH HOOKROLE AUTHORITIES
 							    var hookRoleExists=false;
 							    var token = localStorage.getItem('orp_token');
@@ -43,15 +45,15 @@
                                         if(hookRoleExists==false){if($.inArray(item,json.authorities)>=0){hookRoleExists=true}};
                                     }
 
-                                    if(val2.hookRoles){
-                                        val2.hookRoles.forEach(testAuths);
+                                    if(val3.hookRoles){
+                                        val3.hookRoles.forEach(testAuths);
                                     }
                                 }
 
 
 								var mthd_clr = null;
 								var path_clr = null;
-                                switch(val2.method){
+                                switch(val3.method){
                                     case 'GET':
                                         mthd_clr = '#00CC00';
                                         path_clr = "#cbf3cb";
@@ -70,14 +72,14 @@
                                 out += `<div class='panel panel-default'>
                                             <div class='panel-heading'>
                                                 <div class='row panel panel-blue' style='padding:0px;margin-left:0px;margin-right:0px;'>
-                                                    <div class='col-md-1' style='padding-top:8px;padding-bottom:8px;background-color:`+mthd_clr+`'>`+val2.method+`</div>
+                                                    <div class='col-md-1' style='padding-top:8px;padding-bottom:8px;background-color:`+mthd_clr+`'>`+val3.method+`</div>
                                                         <div class='col-md-5' style='padding:0px;margin:0px;'>
                                                             <h4 class='panel-title'>
-                                                            <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`' style='background-color:`+path_clr+`;line-height:2.0;'>`+val2.path+`</a>
+                                                            <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`' style='background-color:`+path_clr+`;line-height:2.0;'>`+val3.path+`</a>
                                                             </h4>
                                                         </div>
                                                         <div class='col-md-5' style="padding-top:8px;padding-bottom:8px;">
-                                                            <span style='font-weight:normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.6;'>`+val2.description+`</span>
+                                                            <span style='font-weight:normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.6;'>`+val3.description+`</span>
                                                         </div>`;
 
                                 if(hookRoleExists){
@@ -101,10 +103,10 @@
                                 <!-- START EXAMPLE CALL -->
                                  out += "           <header style='font-weight:bold;font-size: 12px;'>Example API Call</header>";
 
-                                if(val2.inputjson!=null){
-                                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+val2.method+" -d "+val2.inputjson+" 'http://localhost:8080"+val2.path+"'</div>";
+                                if(val3.inputjson!=null){
+                                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+val3.method+" -d "+val3.inputjson+" 'http://localhost:8080"+val3.path+"'</div>";
                                 }else{
-                                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+val2.method+" 'http://localhost:8080"+val2.path+"'</div>";
+                                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+val3.method+" 'http://localhost:8080"+val3.path+"'</div>";
                                 }
 
                                 out += "            </br>";
@@ -130,7 +132,7 @@
 
                                 var receivesNull = true
 
-                                $.each(val2.receives,function(key4,val4){
+                                $.each(val3.receives,function(key4,val4){
                                     var pass = false
                                     if(key4=='permitAll'){
                                         pass = true
@@ -184,7 +186,7 @@
                                                              </thead>
                                                              <tbody>`;
 
-                                $.each(val2.returns,function(key6,val6){
+                                $.each(val3.returns,function(key6,val6){
                                     if(key6=='permitAll' || window.token.authorities.indexof(key6)>=0){
                                         $.each(val6,function(key7,val7){
                                              out += "                   <tr>";
@@ -227,15 +229,15 @@
 
                                 out += `                     <div class='form-group col-md-7'>
                                                                 <label class='sr-only' for='exampleInputEmail2'>Request Data</label>`;
-                                if(val2.inputjson!=null){
-                                    out += "        <input type='text' id='jsonData_"+count+"' name='jsonData' class='form-control' style='width: 100%;' value='"+val2.inputjson+"'>";
+                                if(val3.inputjson!=null){
+                                    out += "        <input type='text' id='jsonData_"+count+"' name='jsonData' class='form-control' style='width: 100%;' value='"+val3.inputjson+"'>";
                                 }
 
                                 out += "                    </div>";
 
                                 out += `                    <div class='form-group col-md-4'>
-                                                                <button type='submit' class='btn-u btn-u-dark' onclick='callApi("`+val2.method+`","`+path+`","`+count+`")'>Call API</button>
-                                                                <button type='submit' class='btn-u btn-u-dark' onclick='generateTemplate("`+val2.method+`","`+path+`","`+count+`")'>Generate JS</button>
+                                                                <button type='submit' class='btn-u btn-u-dark' onclick='callApi("`+val3.method+`","`+path+`","`+count+`")'>Call API</button>
+                                                                <button type='submit' class='btn-u btn-u-dark' onclick='generateTemplate("`+val3.method+`","`+path+`","`+count+`")'>Generate JS</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -255,7 +257,7 @@
                                     </div>`;
                                count = count + 1;
 
-							//});
+							});
                             out += "</div>";
 						});
 					});
