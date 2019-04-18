@@ -65,23 +65,22 @@ console.log(val2);
 
                                 out += `<div class='panel panel-default'>
                                             <div class='panel-heading'>
-                                                <div class='row panel panel-blue' style='margin-left:0px;margin-right:0px'>
+                                                <div class='row panel panel-blue' style='padding:0px;margin-left:0px;margin-right:0px;'>
                                                     <div class='col-md-1' style='padding-top:8px;padding-bottom:8px;background-color:`+mthd_clr+`'>`+val2.method+`</div>
                                                         <div class='col-md-5'>
                                                             <h4 class='panel-title'>
                                                             <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`'>`+val2.path+`</a>
                                                             </h4>
                                                         </div>
-                                                        <div class='col-md-5'>
-                                                            <div style='font-weight: normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.2;'>`+val2.description+`</div>
+                                                        <div class='col-md-5' style="padding-top:8px;padding-bottom:8px;">
+                                                            <span style='font-weight:normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.6;'>`+val2.description+`</span>
                                                         </div>`;
 
                                 if(hookRoleExists){
-                                 out += `               <div class='col-md-1'>
-                                                            <div><button onclick="location.href='hook_create.html?k2=`+key2+`&k3=`+key2+`'" type='button' class='btn btn-primary'>Hook</button></div>
+                                 out += `               <div class='col-md-1' style="padding:0px;margin:0px;">
+                                                            <button onclick="location.href='hook_create.html?k2=`+key2+`&k3=`+key2+`'" type='button' class='btn btn-primary' style='font-weight:normal;font-family:Arial, sans-serif;font-size: 15px;line-height:1.6;margin-left:8%;float:right;'>Hook</button>
                                                         </div>`;
                                 }
-
                                 out += `            </div>
                                                 </div>
                                                 <div id='collapse-`+count+`' class='panel-collapse collapse'>
