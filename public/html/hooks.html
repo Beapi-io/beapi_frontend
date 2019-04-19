@@ -200,14 +200,15 @@
 				dataType:"text json",
 				success: function(json) {
                     var mydata = [];
-
-				    $.each(json, function(key,val){
-                        var row = {"id":val.id,"users":val.userId,"callback":val.url,"format":val.format,"service":val.service}
-                        mydata.push(row);
-                    });
-                   $('#table').bootstrapTable({
-                      data: mydata
-                   });
+					if(json!=null){
+						$.each(json, function(key,val){
+							var row = {"id":val.id,"users":val.userId,"callback":val.url,"format":val.format,"service":val.service}
+							mydata.push(row);
+						});
+					   $('#table').bootstrapTable({
+						  data: mydata
+					   });
+                   }
 
 				},
                error: function(jqXHR, textStatus, errorThrown) {
