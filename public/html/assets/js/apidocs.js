@@ -60,12 +60,15 @@
                                         break;
                                     case 'PUT':
                                         mthd_clr = '#CCCC00';
+                                        path_clr = "#eeef95";
                                         break;
                                     case 'POST':
                                         mthd_clr = '#CC6600';
+                                        path_clr = "#fbc795";
                                         break;
                                     case 'DELETE':
-                                        mthd_clr = '#CC0000';
+                                        mthd_clr = '#cc1d1d';
+                                        path_clr = "#f3acac";
                                         break;
                                 }
 
@@ -84,7 +87,7 @@
 
                                 if(hookRoleExists){
                                  out += `               <div class='col-md-1' style="padding:0px;margin:0px;">
-                                                            <button onclick="location.href='hook_create.html?k2=`+key2+`&k3=`+key2+`'" type='button' class='btn btn-primary' style='font-weight:normal;font-family:Arial, sans-serif;font-size: 15px;line-height:1.6;margin-left:8%;float:right;'>Hook</button>
+                                                            <button onclick="location.href='hook_create.html?k2=`+key2+`&k3=`+key2+`'" type='button' class='btn btn-primary' style='font-weight:normal;font-family:Arial, sans-serif;font-size: 15px;line-height:1.6;margin-left:8%;float:right;'>Create Hook</button>
                                                         </div>`;
                                 }
                                 out += `            </div>
@@ -133,16 +136,7 @@
                                 var receivesNull = true
 
                                 $.each(val3.receives,function(key4,val4){
-                                    var pass = false
-                                    if(key4=='permitAll'){
-                                        pass = true
-                                    } else {
-                                        var arr = window.token.authorities
-                                        for(var i = 0, len = arr.length; i < len; i++) {
-                                            if (arr[i][key4]) { pass = true; }
-                                        }
-                                    }
-                                    if(pass){
+
                                         $.each(val4,function(key5,val5){
 
                                             if(val5!=null){
@@ -157,7 +151,7 @@
 
                                             }
                                         });
-                                    }
+
                                 });
                                 if(receivesNull==false){
                                     receives += `                        </tbody>
