@@ -10,27 +10,52 @@
 		$.ajax({
 			type:'POST',
 			url: window.url+"/api/logout",
-			crossDomain: true,
-			cache:false,
-			xhrFields: {
-				withCredentials: true
-			},
-			beforeSend: function(request){
-				request.setRequestHeader('Authorization','Bearer '+access_token);
-			},
-			headers:{
-				'Content-Type':'application/json',
-			},
-		  	dataType:"text json",
+                cache:false,
+                async:true,
+			    crossDomain: true,
+                xhrFields: {
+                    withCredentials: true
+                },
+                beforeSend: function(request){
+                    request.setRequestHeader('Authorization','Bearer '+access_token);
+                },
+                headers:{
+                    'Content-Type':'application/json'
+                },
+        	    error: function (xhr, textStatus, thrownError){
+            	    console.log('error: ' + xhr.responseText);
+        	    },
 		  	success: function(json) {
                 localStorage.removeItem('orp_token');
                 $("#orp_header").load("common/nologin_header.html");
                 location.reload();
-		  	},
-		  	error: function(err) {
-				console.log("error",err);
 		  	}
-		});
+		}).done(function(data, textStatus, jqXHR) {
+		        console.log('done')
+                header = "common/nologin_header.html";
+
+                $("#orp_header").load(header);
+                location.reload();
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.log('fail'+textStatus);
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connected.Verify Network.'+window.url+'.Error:'+errorThrown;
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]\n' + jqXHR.responseText;
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].\n' + jqXHR.responseText;
+                } else if (exception === 'parsererror') {
+                    msg = 'Bad Credentials. Please Try Again';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                alert(msg);
+            })
 	};
 </script>
 <div class="navbar mega-menu" role="navigation">

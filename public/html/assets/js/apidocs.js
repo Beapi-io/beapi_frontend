@@ -21,14 +21,9 @@
                     var count = 1;
                     if(json){
 					$.each(json, function(key,val){
-
 					    document.getElementById("apidocs").innerHTML = null
-
 						$.each(val, function(key2,val2){
-
                             var controller = key2;
-
-
 							out += `<header style='font-weight:bold;font-size: 16px;'>`+key2.toUpperCase()+`</header>
                                     <div class='panel-group acc-v1' id='accordion-"+count+"'>`;
 							$.each(val2,function(key3,val3){
@@ -136,7 +131,16 @@
                                 var receivesNull = true
 
                                 $.each(val3.receives,function(key4,val4){
-
+                                    var pass = false
+                                    if(key4=='permitAll' || window.token.authorities.indexOf(key4)>=0){
+                                        pass = true
+                                    } else {
+                                        var arr = window.token.authorities
+                                        for(var i = 0, len = arr.length; i < len; i++) {
+                                            if (arr[i][key4]) { pass = true; }
+                                        }
+                                    }
+                                    if(pass){
                                         $.each(val4,function(key5,val5){
 
                                             if(val5!=null){
@@ -151,7 +155,7 @@
 
                                             }
                                         });
-
+                                    }
                                 });
                                 if(receivesNull==false){
                                     receives += `                        </tbody>
@@ -181,7 +185,7 @@
                                                              <tbody>`;
 
                                 $.each(val3.returns,function(key6,val6){
-                                    if(key6=='permitAll' || window.token.authorities.indexof(key6)>=0){
+                                    if(key6=='permitAll' || window.token.authorities.indexOf(key6)>=0){
                                         $.each(val6,function(key7,val7){
                                              out += "                   <tr>";
                                              if(val7){
@@ -202,8 +206,8 @@
                                                             </table>
                                                         </div>
                                                     </div>
-
                                                     <br/>`;
+
 <!-- END RESPONSE VARS -->
                                 <!-- START SANDBOX -->
                                 out += `            <div class='panel panel-grey margin-bottom-40'>
@@ -483,7 +487,7 @@
                         },
                         dataType: '`+datatype+`',
                         success: function(json) {
-                            console.log(json);
+                            //console.log(json);
                         },
                        error: function(jqXHR, textStatus, errorThrown) {
                             console.log(jqXHR.statusText);
@@ -513,7 +517,7 @@
                         },
                         dataType: '`+datatype+`',
                         success: function(json) {
-                            console.log(json);
+                            //console.log(json);
                         },
                        error: function(jqXHR, textStatus, errorThrown) {
                             console.log(jqXHR.statusText);

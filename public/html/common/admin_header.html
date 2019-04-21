@@ -4,6 +4,8 @@
 	    var token = localStorage.getItem('orp_token');
         var json = JSON.parse(token);
         var access_token = json.access_token;
+
+
 		$.ajax({
 			type:'POST',
 			url: window.url+"/api/logout",
