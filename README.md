@@ -6,7 +6,7 @@
 2. change the port that node listens on
 ```
 sudo apt-get install libcap2-bin
-sudo setcap cap_net_bind_service=+ep /usr/bin/nodejs <--(change if this isn't your node application path)
+sudo setcap cap_net_bind_service=+ep /usr/bin/node <--(change if this isn't your node application path)
 ```
 
 ## RUN
