@@ -9,6 +9,12 @@ sudo apt-get install libcap2-bin
 sudo setcap cap_net_bind_service=+ep /usr/bin/node <--(change if this isn't your node application path)
 ```
 
+## CONFIGURE
+Change the window.version in 'public/html/config.js' to match the current beapi-all-in-one version you are running:
+```
+window.version = '1.5.58';
+```
+
 ## RUN
 1. To run the application, go into the root directory and type the following:
 ```
