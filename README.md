@@ -45,3 +45,9 @@ Pulling new changes on the server currently requires:
 ```
 sudo git -c http.sslVerify=false pull
 ```
+
+## Configure
+- config.json : contains url of 'master' instance; this has to be set
+- config.js : env variables
+  - window.version : version of BeAPI you are running (ie '1.5.58'); this has to be set.
+  
