@@ -12,9 +12,12 @@ sudo setcap cap_net_bind_service=+ep /usr/bin/node <--(change if this isn't your
 ## CONFIGURE
 Change the window.version in 'public/html/config.js' to match the current beapi-all-in-one version you are running:
 ```
-window.version = '1.5.58';
+window.version = '1.6.58';
 ```
-
+also install...
+```
+npm install googleapis
+```
 ## RUN
 1. To run the application, go into the root directory and type the following:
 ```
