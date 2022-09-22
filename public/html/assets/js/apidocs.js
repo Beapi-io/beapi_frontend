@@ -14,6 +14,179 @@ xhr.onreadystatechange = function () {
       if(xhr.status!=200){
           localStorage.removeItem('token');
           header = "common/nologin_header.html";
+      }else{
+        var out = "";
+        document.getElementById("apidocs").innerHTML = null
+        var json = JSON.parse(xhr.responseText);
+        var controllers = Object.keys(json);
+        for (const cont of controllers) {
+            var count = 1;
+            out += `<header style='font-weight:bold;font-size: 16px;'>`+cont.toUpperCase()+`</header>
+                    <div class='panel-group acc-v1' id='accordion-"+count+"'>`;
+
+            var versions = json[cont];
+            var temp = Object.keys(versions);
+            for (const vers of temp) {
+                var actions = versions[vers];
+                var temp2 = Object.keys(actions);
+                for (const action of temp2) {
+                    var apiObject = actions[action];
+                    console.log(apiObject.description);
+
+                    var mthd_clr = null;
+                    var path_clr = null;
+                    switch(apiObject.method){
+                        case 'GET':
+                            mthd_clr = '#00CC00';
+                            path_clr = "#cbf3cb";
+                            break;
+                        case 'PUT':
+                            mthd_clr = '#CCCC00';
+                            path_clr = "#eeef95";
+                            break;
+                        case 'POST':
+                            mthd_clr = '#CC6600';
+                            path_clr = "#fbc795";
+                            break;
+                        case 'DELETE':
+                            mthd_clr = '#cc1d1d';
+                            path_clr = "#f3acac";
+                            break;
+                    }
+                    var path = "/"+cont+"/"+action;
+
+                    out += `<div class='panel panel-default'>
+                                <div class='panel-heading'>
+                                    <div class='row panel panel-blue' style='padding:0px;margin-left:0px;margin-right:0px;'>
+                                        <div class='col-md-1' style='padding-top:8px;padding-bottom:8px;background-color:`+mthd_clr+`'>`+action+`</div>
+                                            <div class='col-md-5' style='padding:0px;margin:0px;'>
+                                                <h4 class='panel-title'>
+                                                <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`' style='background-color:`+path_clr+`;line-height:2.0;'>`+path+`</a>
+                                                </h4>
+                                            </div>
+                                            <div class='col-md-5' style="padding-top:8px;padding-bottom:8px;">
+                                                <span style='font-weight:normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.6;'>`+apiObject.description+`</span>
+                                            </div>`;
+                    if(apiObject.hook){
+                        out += `               <div class='col-md-1' style="padding:0px;margin:0px;">
+                                                <button onclick="location.href='hook_create.html?k2=`+cont+`&k3=`+action+`'" type='button' class='btn btn-primary' style='font-weight:normal;font-family:Arial, sans-serif;font-size: 15px;line-height:1.6;margin-left:8%;float:right;'>Create Hook</button>
+                                            </div>`;
+                    }
+                    out += `            </div>
+                                </div>
+                                <div id='collapse-`+count+`' class='panel-collapse collapse'>
+                                    <div style='padding:10px;background-color:#E7E7E7'>
+
+                                        <div class='panel panel-grey margin-bottom-40'>
+                                            <div class='panel-heading'>
+                                                <h3 class='panel-title' style='padding-left:15px;'>URI</h3>
+                                            </div>
+                                        <div class='panel-body'>`+path+`</div>
+                                    </div>
+                                    </br>`;
+
+
+                    <!-- START EXAMPLE CALL -->
+                    out += "           <header style='font-weight:bold;font-size: 12px;'>Example API Call</header>";
+
+                    //if(val3.inputjson!=null){
+                    //    out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" -d "+val3.inputjson+" 'http://localhost:8080"+path+"'</div>";
+                    //}else{
+                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" 'http://localhost:8080"+path+"'</div>";
+                    //}
+
+                    out += "            </br>";
+                    <!-- END EXAMPLE CALL -->
+
+
+
+                    <!-- START REQUEST VARS -->
+                    var receives = "";
+                    receives += `<div class='panel panel-grey margin-bottom-40'>
+                                    <div class='panel-heading' style='padding-left:15px;'>
+                                        <h3 class='panel-title'>Request Variables</h3>
+                                    </div>
+                                    <div class='panel-body' style='padding:5px;'>
+                                        <table class='table'>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Type</th>
+                                                    <th>Desc</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>`;
+
+                    var receivesNull = true
+
+
+
+                    var temp3 = Object.keys(apiObject.receives);
+                    if(temp3>=1){
+                        receives += `                   <tr>`;
+                        for (const receiveVar of temp3) {
+                            receives += `                    <td>`+receiveVar+`</td>`;
+                        }
+                        receives += `                   <\tr>`;
+                    }
+
+                    receives += `                        </tbody>
+                                                    </table>
+                                                 </div>
+                                            </div>
+                                            <br/>`;
+                    out += receives;
+
+                    <!-- END REQUEST VARS -->
+
+
+                    <!-- START RESPONSE VARS -->
+                    out += `            <div class='panel panel-grey margin-bottom-40'>
+                                            <div class='panel-heading' style='padding-left:15px;'>
+                                                <h3 class='panel-title''>Response Variables</h3>
+                                            </div>
+                                            <div class='panel-body' style='padding:5px;'>
+                                             <table class='table'>
+                                                 <thead>
+                                                     <tr>
+                                                         <th>Name</th>
+                                                         <th>Type</th>
+                                                         <th>Desc</th>
+                                                     </tr>
+                                                 </thead>
+                                                 <tbody>`;
+
+                    var temp4 = Object.keys(apiObject.returns);
+                    if(temp4>=1){
+                        receives += `                   <tr>`;
+                        for (const returnVar of temp3) {
+                            receives += `                    <td>`+returnVar+`</td>`;
+                        }
+                        receives += `                   <\tr>`;
+                    }
+
+                    out += `                        </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <br/>`;
+                    <!-- END RESPONSE VARS -->
+
+
+                    out += `    </div>
+                            </div>
+                        </div>`;
+                   count = count + 1;
+
+                }
+            }
+                                        out += "</div>";
+        }
+        document.getElementById("apidocs").innerHTML = out;
+
+
+
+
       }
    }
 };
