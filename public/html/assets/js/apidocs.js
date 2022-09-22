@@ -1,9 +1,8 @@
     function initApiDocs(){
-            //console.log(window.url);
             console.log(window.token);
 
-
-var url = window.url+'/v1.0/apidoc/show';
+var appVersion = "1.0"
+var url = window.url+'/v'+appVersion+'/apidoc/show';
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url);
 xhr.setRequestHeader("Authorization", "Bearer "+window.token);
@@ -19,8 +18,9 @@ xhr.onreadystatechange = function () {
         document.getElementById("apidocs").innerHTML = null
         var json = JSON.parse(xhr.responseText);
         var controllers = Object.keys(json);
+        var count = 1;
         for (const cont of controllers) {
-            var count = 1;
+
             out += `<header style='font-weight:bold;font-size: 16px;'>`+cont.toUpperCase()+`</header>
                     <div class='panel-group acc-v1' id='accordion-"+count+"'>`;
 
@@ -31,7 +31,6 @@ xhr.onreadystatechange = function () {
                 var temp2 = Object.keys(actions);
                 for (const action of temp2) {
                     var apiObject = actions[action];
-                    console.log(apiObject.description);
 
                     var mthd_clr = null;
                     var path_clr = null;
@@ -53,7 +52,7 @@ xhr.onreadystatechange = function () {
                             path_clr = "#f3acac";
                             break;
                     }
-                    var path = "/"+cont+"/"+action;
+                    var path = "/v"+appVersion+"/"+cont+"/"+action;
 
                     out += `<div class='panel panel-default'>
                                 <div class='panel-heading'>
@@ -92,7 +91,7 @@ xhr.onreadystatechange = function () {
                     //if(val3.inputjson!=null){
                     //    out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" -d "+val3.inputjson+" 'http://localhost:8080"+path+"'</div>";
                     //}else{
-                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" 'http://localhost:8080"+path+"'</div>";
+                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" '"+window.url+path+"'</div>";
                     //}
 
                     out += "            </br>";
@@ -121,12 +120,11 @@ xhr.onreadystatechange = function () {
 
 
 
-                    var temp3 = Object.keys(apiObject.receives);
-                    if(temp3>=1){
+                    if(apiObject.receives.name){
                         receives += `                   <tr>`;
-                        for (const receiveVar of temp3) {
-                            receives += `                    <td>`+receiveVar+`</td>`;
-                        }
+                            receives += `                    <td>`+apiObject.receives.name+`</td>
+                                                            <td>`+apiObject.receives.type+`</td>
+                                                            <td>`+apiObject.receives.description+`</td>`;
                         receives += `                   <\tr>`;
                     }
 
@@ -156,12 +154,12 @@ xhr.onreadystatechange = function () {
                                                  </thead>
                                                  <tbody>`;
 
-                    var temp4 = Object.keys(apiObject.returns);
-                    if(temp4>=1){
+
+                    if(apiObject.returns.name){
                         receives += `                   <tr>`;
-                        for (const returnVar of temp3) {
-                            receives += `                    <td>`+returnVar+`</td>`;
-                        }
+                            receives += `                    <td>`+apiObject.returns.name+`</td>
+                                                            <td>`+apiObject.returns.type+`</td>
+                                                            <td>`+apiObject.returns.description+`</td>`;
                         receives += `                   <\tr>`;
                     }
 
@@ -172,14 +170,16 @@ xhr.onreadystatechange = function () {
                                         <br/>`;
                     <!-- END RESPONSE VARS -->
 
+                                    out += `    </div>
+                                            </div>
+                                        </div>`;
 
-                    out += `    </div>
-                            </div>
-                        </div>`;
-                   count = count + 1;
 
+
+count = count + 1;
                 }
             }
+
                                         out += "</div>";
         }
         document.getElementById("apidocs").innerHTML = out;
