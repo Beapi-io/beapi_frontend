@@ -120,12 +120,15 @@ xhr.onreadystatechange = function () {
 
 
 
-                    if(apiObject.receives.name){
-                        receives += `                   <tr>`;
-                            receives += `                    <td>`+apiObject.receives.name+`</td>
-                                                            <td>`+apiObject.receives.type+`</td>
-                                                            <td>`+apiObject.receives.description+`</td>`;
-                        receives += `                   <\tr>`;
+                    if(apiObject.receives){
+                        for (const rec of apiObject.receives) {
+                        receives += "                   <tr>";
+                        receives += `                       <td>`+rec.name+`</td>
+                                                            <td>`+rec.type+`</td>
+                                                            <td>`+rec.description+`</td>`;
+                        receives += "                   </tr>";
+                        }
+
                     }
 
                     receives += `                        </tbody>
@@ -139,9 +142,10 @@ xhr.onreadystatechange = function () {
 
 
                     <!-- START RESPONSE VARS -->
-                    out += `            <div class='panel panel-grey margin-bottom-40'>
+                    var returns = "";
+                    returns += `            <div class='panel panel-grey margin-bottom-40'>
                                             <div class='panel-heading' style='padding-left:15px;'>
-                                                <h3 class='panel-title''>Response Variables</h3>
+                                                <h3 class='panel-title'>Response Variables</h3>
                                             </div>
                                             <div class='panel-body' style='padding:5px;'>
                                              <table class='table'>
@@ -154,20 +158,23 @@ xhr.onreadystatechange = function () {
                                                  </thead>
                                                  <tbody>`;
 
-
-                    if(apiObject.returns.name){
-                        receives += `                   <tr>`;
-                            receives += `                    <td>`+apiObject.returns.name+`</td>
-                                                            <td>`+apiObject.returns.type+`</td>
-                                                            <td>`+apiObject.returns.description+`</td>`;
-                        receives += `                   <\tr>`;
+                    if(apiObject.returns){
+                        for (const ret of apiObject.returns) {
+                        returns += "                   <tr>";
+                        returns += `                        <td>`+ret.name+`</td>
+                                                            <td>`+ret.type+`</td>
+                                                            <td>`+ret.description+`</td>`;
+                        returns += "                   </tr>";
+                        }
                     }
 
-                    out += `                        </tbody>
+                    returns += `                        </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                         <br/>`;
+
+                    out += returns;
                     <!-- END RESPONSE VARS -->
 
                                     out += `    </div>
