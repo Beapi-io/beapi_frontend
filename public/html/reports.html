@@ -65,7 +65,7 @@
 	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 	<script>
 
-	var test = localStorage.getItem('orp_token');
+	var test = localStorage.getItem('token');
 	if(test==null){
 		window.location = "index.html";
 	}
@@ -139,7 +139,7 @@
 	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
 	<script type="text/javascript">
 	/*
-		var token = localStorage.getItem('orp_token');
+		var token = localStorage.getItem('token');
 		window.token = JSON.parse(token);
 		window.url = null;
 
@@ -148,7 +148,7 @@
 		});
 */
 		var header = "common/orp_header.html";
-		var test = localStorage.getItem('orp_token');
+		var test = localStorage.getItem('token');
 		var json = JSON.parse(test)
 		var test2 = $.inArray('ROLE_ADMIN',json.authorities);
 		if(test2>=0){

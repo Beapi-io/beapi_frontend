@@ -1,36 +1,36 @@
 <!-- Navbar -->
 <script>
 	function logout() {
-	    var token = localStorage.getItem('orp_token');
+	    var token = localStorage.getItem('token');
         var json = JSON.parse(token);
-        var access_token = json.access_token;
-
+        var access_token = json.token;
+        console.log("Logout:"+token);
 
 		$.ajax({
 			type:'POST',
-			url: window.url+"/api/logout",
+			url: window.url+"/logout",
 			crossDomain: true,
 			cache:false,
 			xhrFields: {
 				withCredentials: true
 			},
 			beforeSend: function(request){
-				request.setRequestHeader('Authorization','Bearer '+access_token);
+				request.setRequestHeader('Authorization','Bearer '+token);
 			},
 			headers:{
 				'Content-Type':'application/json',
 			},
 		  	dataType:"text json",
 		  	success: function(json) {
-                		localStorage.removeItem('orp_token');
+                		localStorage.removeItem('token');
                 		$("#orp_header").load("common/nologin_header.html");
                 		location.reload();
 		  	},
-           		error: function(jqXHR, textStatus, errorThrown) {
-                		localStorage.removeItem('orp_token');
-                		$("#orp_header").load("common/nologin_header.html");
-                		location.reload();
-            		},
+            error: function(jqXHR, textStatus, errorThrown) {
+                    localStorage.removeItem('token');
+                    $("#orp_header").load("common/nologin_header.html");
+                    location.reload();
+                },
 		});
 	};
 </script>

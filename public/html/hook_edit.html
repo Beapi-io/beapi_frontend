@@ -59,7 +59,7 @@
 
 
 	<script>
-	var test = localStorage.getItem('orp_token');
+	var test = localStorage.getItem('token');
 	if(test==null){
 		window.location = "index.html";
 	}
@@ -200,7 +200,7 @@
 
 	<script type="text/javascript">
 	/*
-		var token = localStorage.getItem('orp_token');
+		var token = localStorage.getItem('token');
 		window.token = JSON.parse(token);
 		window.url = null;
 
@@ -218,9 +218,9 @@
 
 		var header = null;
 		var footer = null;
-		if(localStorage.getItem('orp_token')!=null){
+		if(localStorage.getItem('token')!=null){
 			header = "common/orp_header.html"
-			var test = localStorage.getItem('orp_token');
+			var test = localStorage.getItem('token');
 			var json = JSON.parse(test)
 			var test2 = $.inArray('ROLE_ADMIN',json.authorities);
 			if(test2>=0){

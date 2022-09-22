@@ -181,7 +181,7 @@
 
 <script type="text/javascript">
 	/*
-		var token = localStorage.getItem('orp_token');
+		var token = localStorage.getItem('token');
 		window.token = JSON.parse(token);
 		window.url = null;
 
@@ -197,9 +197,9 @@
 console.log(userId);
 		var header = "common/nologin_header.html";
 		var footer = "common/orp_footer.html";
-		if(localStorage.getItem('orp_token')!=null){
+		if(localStorage.getItem('token')!=null){
 			header = "common/orp_header.html";
-			var test = localStorage.getItem('orp_token');
+			var test = localStorage.getItem('token');
 			var json = JSON.parse(test);
 			var test2 = $.inArray('ROLE_ADMIN',json.authorities);
 			if(test2>=0){

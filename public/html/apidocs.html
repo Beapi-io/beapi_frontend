@@ -121,31 +121,23 @@
 
 
 <script type="text/javascript">
-	/*
-		var token = localStorage.getItem('orp_token');
-		window.token = JSON.parse(token);
-		window.url = null;
-
-		$.getJSON("config.json", function(json) {
-		   window.url = json.URL;
-		});
-*/
-
 		var header = null;
 		var footer = null;
-		if(localStorage.getItem('orp_token')!=null){
+		var json = null;
+		if(localStorage.getItem('token')!=null){
 			header = "common/orp_header.html"
-			var test = localStorage.getItem('orp_token');
-			var json = JSON.parse(test)
-			var test2 = $.inArray('ROLE_ADMIN',json.authorities);
-			if(test2>=0){
-				header = "common/admin_header.html"
+			var token = localStorage.getItem('token');
+			if(token){
+				header = "common/admin_header.html";
 			}
 		}else{
-			header = "common/nologin_header.html"
+			console.log("isNull : "+localStorage.getItem('token'));
+			header = "common/nologin_header.html";
 		}
-		footer = "common/orp_footer.html"
+
+		footer = "common/orp_footer.html";
 		$(function(){
+			console.log('orp_header loading header...');
 			$("#orp_header").load(header);
 			$("#orp_footer").load(footer);
 		});
@@ -157,9 +149,6 @@
 		});
 
 		var x2js = new X2JS();
-
-
-
 	</script>
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.js"></script>

@@ -65,13 +65,13 @@
 
 	<script>
 
-	var test = localStorage.getItem('orp_token');
+	var test = localStorage.getItem('token');
 	if(test==null){
 		// NOT LOGGED IN
 		window.location = "index.html";
 	}else{
 		// NO PERMISSIONS
-		var test = localStorage.getItem('orp_token');
+		var test = localStorage.getItem('token');
 		var json = JSON.parse(test)
 		var test2 = $.inArray('ROLE_ADMIN',json.authorities);
 		if(test2<0){
@@ -196,7 +196,7 @@
 	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
 	<script type="text/javascript">
 	/*
-		var token = localStorage.getItem('orp_token');
+		var token = localStorage.getItem('token');
 		window.token = JSON.parse(token);
 		window.url = null;
 
@@ -205,7 +205,7 @@
 		});
 */
 		var header = "common/orp_header.html";
-		var test = localStorage.getItem('orp_token');
+		var test = localStorage.getItem('token');
 		var json = JSON.parse(test)
 		var test2 = $.inArray('ROLE_ADMIN',json.authorities);
 		if(test2>=0){

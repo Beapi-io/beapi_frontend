@@ -1,8 +1,9 @@
 <!-- Navbar -->
 <script>
 	function logout() {
-	    var token = localStorage.getItem('orp_token');
-	    console.log("token:"+token);
+	    var token = localStorage.getItem('token');
+	    console.log("Logout:"+token);
+
         var json = JSON.parse(token);
         var access_token = json.access_token;
 
@@ -26,7 +27,7 @@
             	    console.log('error: ' + xhr.responseText);
         	    },
 		  	success: function(json) {
-                localStorage.removeItem('orp_token');
+                localStorage.removeItem('token');
                 $("#orp_header").load("common/nologin_header.html");
                 location.reload();
 		  	}

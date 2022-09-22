@@ -2,14 +2,14 @@
 	        var existingPath = k2+"/"+k3;
 			$.ajax({
 				type:'GET',
-				url: window.url+"/v0.1/apidoc/show",
+				url: window.url+"/v1.0/apidoc/show",
 				crossDomain: true,
 				cache:false,
                 xhrFields: {
                     withCredentials: false
                 },
 				beforeSend: function(request){
-					request.setRequestHeader('Authorization','Bearer '+window.token.access_token);
+					request.setRequestHeader('Authorization','Bearer '+window.token.token);
 				},
 				headers:{
 					'Content-Type':'application/json',
@@ -26,7 +26,7 @@
 
 							    // MATCH HOOKROLE AUTHORITIES
 							    var hookRoleExists=false;
-							    var token = localStorage.getItem('orp_token');
+							    var token = localStorage.getItem('token');
 							    var json = JSON.parse(token);
                                 if(token!=null){
 

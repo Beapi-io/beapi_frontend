@@ -29,14 +29,14 @@
 
             $.ajax({
                 type: 'POST',
-                url: window.url + "/api/login",
+                url: window.url + "/authenticate",
                 cache:false,
                 async:true,
                 contentType: 'application/json',
                 data: JSON.stringify(jsonData),
                 //dataType:'json',
                 headers: {
-                    'Access-Control-Allow-Origin': '*'
+                    'Access-Control-Allow-Origin': 'http://localhost'
                 },
                 xhrFields:{
                     withCredentials: true
@@ -54,19 +54,13 @@
             }).done(function(data, textStatus, jqXHR) {
 		        console.log('done')
                 var obj = JSON.parse(jqXHR.responseText);
-                localStorage.setItem('orp_token', JSON.stringify(obj));
-
+                var tmp = JSON.stringify(obj);
+                localStorage.setItem('token', obj.token);
                 // reload header
                 var header = null;
-                var test = localStorage.getItem('orp_token');
+                var test = localStorage.getItem('token');
                 if(test!=null){
-                    var json = JSON.parse(test);
-                    var test2 = $.inArray('ROLE_ADMIN',json.authorities);
-                    if(test2>=0){
-                        header = "common/admin_header.html";
-                    }else{
-                        header = "common/orp_header.html";
-                    }
+                    header = "common/admin_header.html";
                 }else{
                     header = "common/nologin_header.html";
                 }
@@ -155,7 +149,6 @@
 
                     </li>
                     <!-- End Login -->
-
 
                 </ul>
             </div>

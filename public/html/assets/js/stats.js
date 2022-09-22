@@ -2,7 +2,7 @@
     function initStats(){
 			$.ajax({
 				type:'GET',
-				url: window.url+"/v0.1/stat/show",
+				url: window.url+"/v1.0/stat/show",
 				crossDomain: true,
                 cache:false,
                 async:true,

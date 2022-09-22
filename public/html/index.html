@@ -64,7 +64,7 @@
 				location.appendChild(scriptTag);
 			};
 
-			if(localStorage.getItem('orp_token')!=null){
+			if(localStorage.getItem('token')!=null){
 				var reports = function(){
 					initStats();
 				}
@@ -131,24 +131,12 @@
 
 
 <script type="text/javascript">
-	/*
-		var token = localStorage.getItem('orp_token');
-		window.token = JSON.parse(token);
-		window.url = null;
-
-		$.getJSON("config.json", function(json) {
-		   window.url = json.URL;
-		});
-*/
-
 		var header = null;
 		var footer = null;
-		if(localStorage.getItem('orp_token')!=null){
+		if(localStorage.getItem('token')!=null){
 			header = "common/orp_header.html"
-			var test = localStorage.getItem('orp_token');
-			var json = JSON.parse(test)
-			var test2 = $.inArray('ROLE_ADMIN',json.authorities);
-			if(test2>=0){
+			var token = localStorage.getItem('token');
+			if(token){
 				header = "common/admin_header.html"
 			}
 		}else{
