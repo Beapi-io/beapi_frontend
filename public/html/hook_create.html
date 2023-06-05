@@ -3,68 +3,59 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>Beapi > Webhooks > Create</title>
+    <title>Beapi > API Docs</title>
 
-	<!-- Meta -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
-	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
 
-	<!-- CONFIG -->
-	<script type="text/javascript" src="../../config.js"></script>
+    <!-- CONFIG -->
+    <script type="text/javascript" src="../../config.js"></script>
 
-	<!-- Web Fonts -->
-	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+    <!-- Web Fonts -->
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
-	<!-- CSS Global Compulsory -->
-	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-	<!-- CSS Header and Footer -->
-	<link rel="stylesheet" href="assets/css/headers/header-v6.css">
-	<link rel="stylesheet" href="assets/css/footers/footer-v1.css">
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="assets/css/headers/header-v6.css">
+    <link rel="stylesheet" href="assets/css/footers/footer-v1.css">
 
-	<!-- CSS Implementing Plugins -->
-	<link rel="stylesheet" href="assets/plugins/animate.css">
-	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
-	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/parallax-slider/css/parallax-slider.css">
-	<link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">
-	<link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
-	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/animate.css">
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+    <link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
 
-	<!-- CSS Theme -->
-	<link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
-	<link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
+    <link rel="stylesheet" href="assets/css/theme-skins/dark.css">
 
-	<!-- CSS Customization -->
-	<link rel="stylesheet" href="assets/css/custom.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
 
 
-	<link rel="stylesheet" href="assets/css/bootstrap-table.css">
-
-	<style type="text/css">
+    <style type="text/css">
 	#chartdiv {
 		width: 100%;
 		height: 500px;
-	}							
+	}
 	</style>
 
 
-	<script>
-	var test = localStorage.getItem('token');
-	if(test==null){
-		window.location = "index.html";
-	}
+    <script type="text/javascript">
 
-	function init(k2,k3){
+		function getCreateHooks() {
 			var loadJS = function(url, implementationCode, location){
 				var scriptTag = document.createElement('script');
 				scriptTag.src = url;
@@ -75,181 +66,148 @@
 				location.appendChild(scriptTag);
 			};
 			var reports = function(){
-				initData(k2,k3);
+				initCreateHooks();
 			}
-			loadJS('/assets/js/reports/hooks_create.js', reports, document.body);
-	}
-
-
+			loadJS('/assets/js/hooks.js', reports, document.body);
+		}
 
 	</script>
 </head>
 
 <body class="header-fixed">
-	<div class="wrapper">
-		<!--=== Header v6 ===-->
-		<div id="orp_header" class="header-v6 header-white-transparent header-sticky">
-		</div>
-		<!--=== End Header v6 ===-->
+<div class="wrapper">
+    <!--=== Header v6 ===-->
+    <div id="orp_header" class="header-v6 header-white-transparent header-sticky">
+    </div>
+    <!--=== End Header v6 ===-->
 
-		<!-- Interactive Slider v2 -->
-		<div class="interactive-slider-v2 img-v4" style="padding: 50px 0 34px 0;">
-			<div class="container">
-				<p> </p>
-			</div>
-		</div>
-		<!-- End Interactive Slider v2 -->
+    <!-- Interactive Slider v2 -->
+    <div class="interactive-slider-v2 img-v4" style="padding: 50px 0 34px 0;">
+        <div class="container">
+            <p> </p>
+        </div>
+    </div>
+    <!-- End Interactive Slider v2 -->
 
-		<!--=== Content ===-->
+    <!--=== Content ===-->
 
-		<div class="container content">
-			<div class="row">
-				<!-- Begin Content -->
-				<div class="row-fluid">
+    <div class="container content">
+        <div class="row">
+            <!-- Begin Content -->
+            <div id="apidocs" class="col-lg-12">
+                <div id="sky-form3" class="sky-form">
+                    <header>Create Hook</header>
+                    <fieldset>
 
-					<div class="span12 content_padding">
+                        <section class="col-lg-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="label col col-2">Service Subscribed To</label>
+                                    <div class="col col-10">
+                                        <select id="services">
 
-						<div id="list-webhook" class="content scaffold-list" role="main">
-							<h1>Hooks</h1>
-							<div class="row">
-								<div class="col-md-12">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
+                        <section class="col-lg-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="label col col-2">Your Endpoint</label>
+                                    <div class="col col-10">
+                                        <input type="text" class="form-control" id="endpoint" placeholder="http://your/endpoint">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-									<div id="sky-form3" class="sky-form">
-										<header>Create Hook</header>
-										<fieldset>
+                        <section class="col-lg-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="label col col-2">Format</label>
+                                    <div class="col col-10">
+                                        <select id="format">
+                                            <option>None Selected</option>
+                                            <option value='JSON'>JSON</option>
+                                            <option value='XML'>XML</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="col-lg-12">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col col-12">
+                                        <button type="submit" class="btn-u btn-u-blue" onclick="createHook()">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
-												<section class="col-lg-12">
-													<div class="row">
-														<div class="form-group">
-															<label class="label col col-2">Service Subscribed To</label>
-															<div class="col col-10">
-															<select id="services">
+                    </fieldset>
+                </div>
+            </div>
+            <!-- End Content -->
+        </div>
+    </div><!--/end container-->
 
-															</select>
-															</div>
-														</div>
-													</div>
-												</section>
+    <!--=== Footer Version 1 ===-->
+    <div id="orp_footer" class="footer-v1">
+    </div>
+    <!--=== End Footer Version 1 ===-->
+</div><!--/wrapper-->
 
-												<section class="col-lg-12">
-													<div class="row">
-														<div class="form-group">
-															<label class="label col col-2">Your Endpoint</label>
-															<div class="col col-10">
-															<input type="text" class="form-control" id="endpoint" placeholder="http://your/endpoint">
-															</div>
-														</div>
-													</div>
-												</section>
-
-												<section class="col-lg-12">
-													<div class="row">
-														<div class="form-group">
-															<label class="label col col-2">Format</label>
-															<div class="col col-10">
-															<select id="format">
-																<option>None Selected</option>
-																<option value='JSON'>JSON</option>
-																<option value='XML'>XML</option>
-															</select>
-															</div>
-														</div>
-													</div>
-												</section>
-												<section class="col-lg-12">
-													<div class="row">
-														<div class="form-group">
-															<div class="col col-12">
-																<button type="submit" class="btn-u btn-u-blue" onclick="createHook()">Submit</button>
-															</div>
-														</div>
-													</div>
-												</section>
-
-										</fieldset>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Content -->
-			</div>
-
-		</div><!--/end container-->
-
-		<!--=== Footer Version 1 ===-->
-		<div id="orp_footer" class="footer-v1">
-		</div>
-		<!--=== End Footer Version 1 ===-->
-	</div><!--/wrapper-->
-
-	<!-- JS Global Compulsory -->
-	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- JS Implementing Plugins -->
-	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
-	<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
-	<!-- JS Customization -->
-	<script type="text/javascript" src="assets/js/custom.js"></script>
-	<!-- JS Page Level -->
-	<script type="text/javascript" src="assets/js/app.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
-
-	<script src="assets/js/bootstrap-table.js"></script>
-
-	<script type="text/javascript">
-	/*
-		var token = localStorage.getItem('token');
-		window.token = JSON.parse(token);
-		window.url = null;
-
-		$.getJSON("config.json", function(json) {
-		   window.url = json.URL;
-		});
-*/
-
-		params={};
-		location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
-
-		var k2 = (params.k2)?params.k2:null;
-		var k3 = (params.k3)?params.k3:null;
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="assets/js/xml2json.js"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
 
 
+<script type="text/javascript">
 		var header = null;
 		var footer = null;
+		var json = null;
 		if(localStorage.getItem('token')!=null){
 			header = "common/orp_header.html"
-			var test = localStorage.getItem('token');
-			var json = JSON.parse(test)
-			var test2 = $.inArray('ROLE_ADMIN',json.authorities);
-			if(test2>=0){
-				header = "common/admin_header.html"
+			var token = localStorage.getItem('token');
+
+			if(token){
+				header = "common/admin_header.html";
 			}
 		}else{
-			header = "common/nologin_header.html"
+			console.log("isNull : "+localStorage.getItem('token'));
+			header = "common/nologin_header.html";
 		}
-		footer = "common/orp_footer.html"
+
+		footer = "common/orp_footer.html";
 		$(function(){
 			$("#orp_header").load(header);
 			$("#orp_footer").load(footer);
 		});
 
-		var $table = $('#table'),
-        $remove = $('#remove'),
-        selections = [];
-
 		jQuery(document).ready(function() {
-			init(k2,k3);
+			getCreateHooks();
 			App.init();
 			StyleSwitcher.initStyleSwitcher();
 		});
+
+		var x2js = new X2JS();
 	</script>
 <!--[if lt IE 9]>
-  <script src="assets/plugins/respond.js"></script>
-  <script src="assets/plugins/html5shiv.js"></script>
-  <script src="assets/plugins/placeholder-IE-fixes.js"></script>
-  <![endif]-->
+<script src="assets/plugins/respond.js"></script>
+<script src="assets/plugins/html5shiv.js"></script>
+<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
 
 </body>
 </html>

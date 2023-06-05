@@ -36,14 +36,14 @@
                 data: JSON.stringify(jsonData),
                 //dataType:'json',
                 headers: {
-                    'Access-Control-Allow-Origin': 'http://localhost'
+                    'Access-Control-Allow-Origin': 'http://test.nosegrind.net:8080'
                 },
                 xhrFields:{
                     withCredentials: true
                 },
                 crossDomain: true,
         	    error: function (xhr, textStatus, thrownError){
-            	    console.log('error: ' + xhr.responseText);
+            	    console.log('error: ' + thrownError);
         	    },
         	    success: function (data, textStatus, xhr){
 			        console.log('success');
@@ -52,23 +52,25 @@
                     console.log('complete');
         	    }
             }).done(function(data, textStatus, jqXHR) {
-		        console.log('done')
-                var obj = JSON.parse(jqXHR.responseText);
-                var tmp = JSON.stringify(obj);
-                localStorage.setItem('token', obj.token);
-                // reload header
-                var header = null;
-                var test = localStorage.getItem('token');
-                if(test!=null){
-                    header = "common/admin_header.html";
-                }else{
-                    header = "common/nologin_header.html";
-                }
+		        console.log('done : '+textStatus);
+		        if(textStatus=='success'){
+                    var tmp = jqXHR.responseText
+                    localStorage.setItem('token', tmp);
 
-                $("#orp_header").load(header);
-                location.reload();
+                    // reload header
+                    var header = null;
+                    var test = localStorage.getItem('token');
+                    if(test!=null){
+                        header = "common/admin_header.html";
+                    }else{
+                        header = "common/nologin_header.html";
+                    }
+
+                    $("#orp_header").load(header);
+                    location.reload();
+                };
             }).fail(function(jqXHR, textStatus, errorThrown) {
-                console.log('fail'+textStatus);
+                console.log(textStatus);
                 var msg = '';
                 if (jqXHR.status === 0) {
                     msg = 'Not connected.Verify Network.'+window.url+'.Error:'+errorThrown;

@@ -1,11 +1,14 @@
     function initApiDocs(){
+            console.log("### initApiDocs ###")
             console.log(window.token);
+            var tmp = JSON.parse(window.token);
+            console.log(tmp.token);
 
 var appVersion = "1.0"
 var url = window.url+'/v'+appVersion+'/apidoc/show';
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url);
-xhr.setRequestHeader("Authorization", "Bearer "+window.token);
+xhr.setRequestHeader("Authorization", "Bearer "+tmp.token);
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
       console.log(xhr.status);
@@ -17,6 +20,7 @@ xhr.onreadystatechange = function () {
         var out = "";
         document.getElementById("apidocs").innerHTML = null
         var json = JSON.parse(xhr.responseText);
+
         var controllers = Object.keys(json);
         var count = 1;
         for (const cont of controllers) {
@@ -212,7 +216,7 @@ xhr.send();
                 },
 				headers:{
 				    'Access-Control-Allow-Origin':'http://test.nosegrind.net',
-					'Authorization':'Bearer '+window.token.token
+					'Authorization':'Bearer '+tmp.token
 				},
 
 				success: function(json) {
@@ -301,7 +305,7 @@ xhr.send();
                             withCredentials: false
                         },
                         beforeSend: function(request){
-                            request.setRequestHeader('Authorization','Bearer '+window.token.token);
+                            request.setRequestHeader('Authorization','Bearer '+tmp.token);
                         },
                         headers:{
                             'Content-Type': contenttype
@@ -345,7 +349,7 @@ xhr.send();
                             withCredentials: false
                         },
                         beforeSend: function(request){
-                            request.setRequestHeader('Authorization','Bearer '+window.token.token);
+                            request.setRequestHeader('Authorization','Bearer '+tmp.token);
                         },
                         headers:{
                             'Content-Type': contenttype
@@ -434,19 +438,19 @@ xhr.send();
                     out = `
                     $.ajax({
                         type: 'GET',
-                        url: '`+window.url+`/v1.0/`+path+`?`+string+`',
+                        url: window.url+"/v1.0/"+path+"?"+string,
                         crossDomain: true,
                         cache:false,
                         xhrFields: {
                             withCredentials: false
                         },
                         beforeSend: function(request){
-                            request.setRequestHeader('Authorization','Bearer `+window.token.token+`');
+                            request.setRequestHeader('Authorization','Bearer `+tmp.token+`');
                         },
                         headers:{
-                            'Content-Type': '`+contenttype+`'
+                            'Content-Type': contenttype
                         },
-                        dataType: '`+datatype+`',
+                        dataType: datatype,
                         success: function(json) {
                             //console.log(json);
                         },
@@ -471,7 +475,7 @@ xhr.send();
                             withCredentials: false
                         },
                         beforeSend: function(request){
-                            request.setRequestHeader('Authorization','Bearer `+window.token.token+`');
+                            request.setRequestHeader('Authorization','Bearer `+tmp.token+`');
                         },
                         headers:{
                             'Content-Type': '`+contenttype+`'
