@@ -1,243 +1,205 @@
     function initApiDocs(){
-            console.log("### initApiDocs ###")
-            console.log(window.token);
-            var tmp = JSON.parse(window.token);
-            console.log(tmp.token);
+        var tmp = JSON.parse(window.token);
 
-var appVersion = "1.0"
-var url = window.url+'/v'+appVersion+'/apidoc/show';
-var xhr = new XMLHttpRequest();
-xhr.open("GET", url);
-xhr.setRequestHeader("Authorization", "Bearer "+tmp.token);
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
-      if(xhr.status!=200){
-          localStorage.removeItem('token');
-          header = "common/nologin_header.html";
-      }else{
-        var out = "";
-        document.getElementById("apidocs").innerHTML = null
-        var json = JSON.parse(xhr.responseText);
+        var appVersion = "1.0"
+        var url = window.url+'/v'+appVersion+'/apidoc/show';
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.setRequestHeader("Authorization", "Bearer "+tmp.token);
+        xhr.onreadystatechange = function () {
+           if (xhr.readyState === 4) {
+              //console.log(xhr.status);
+              //console.log(xhr.responseText);
+            if(xhr.status==401){
+              localStorage.removeItem('token');
+              header = "common/nologin_header.html";
+            }else if(xhr.status!=200){
+                alert(xhr.responseText);
+            }else{
+                var out = "";
+                document.getElementById("apidocs").innerHTML = null
+                var json = JSON.parse(xhr.responseText);
 
-        var controllers = Object.keys(json);
-        var count = 1;
-        for (const cont of controllers) {
+                var controllers = Object.keys(json);
+                var count = 1;
+                for (const cont of controllers) {
 
-            out += `<header style='font-weight:bold;font-size: 16px;'>`+cont.toUpperCase()+`</header>
-                    <div class='panel-group acc-v1' id='accordion-"+count+"'>`;
+                    out += `<header style='font-weight:bold;font-size: 16px;'>`+cont.toUpperCase()+`</header>
+                            <div class='panel-group acc-v1' id='accordion-"+count+"'>`;
 
-            var versions = json[cont];
-            var temp = Object.keys(versions);
-            for (const vers of temp) {
-                var actions = versions[vers];
-                var temp2 = Object.keys(actions);
-                for (const action of temp2) {
-                    var apiObject = actions[action];
+                    var versions = json[cont];
+                    var temp = Object.keys(versions);
+                    for (const vers of temp) {
+                        var actions = versions[vers];
+                        var temp2 = Object.keys(actions);
+                        for (const action of temp2) {
+                            var apiObject = actions[action];
 
-                    var mthd_clr = null;
-                    var path_clr = null;
-                    switch(apiObject.method){
-                        case 'GET':
-                            mthd_clr = '#00CC00';
-                            path_clr = "#cbf3cb";
-                            break;
-                        case 'PUT':
-                            mthd_clr = '#CCCC00';
-                            path_clr = "#eeef95";
-                            break;
-                        case 'POST':
-                            mthd_clr = '#CC6600';
-                            path_clr = "#fbc795";
-                            break;
-                        case 'DELETE':
-                            mthd_clr = '#cc1d1d';
-                            path_clr = "#f3acac";
-                            break;
-                    }
-                    var path = "/v"+appVersion+"/"+cont+"/"+action;
+                            var mthd_clr = null;
+                            var path_clr = null;
+                            switch(apiObject.method){
+                                case 'GET':
+                                    mthd_clr = '#00CC00';
+                                    path_clr = "#cbf3cb";
+                                    break;
+                                case 'PUT':
+                                    mthd_clr = '#CCCC00';
+                                    path_clr = "#eeef95";
+                                    break;
+                                case 'POST':
+                                    mthd_clr = '#CC6600';
+                                    path_clr = "#fbc795";
+                                    break;
+                                case 'DELETE':
+                                    mthd_clr = '#cc1d1d';
+                                    path_clr = "#f3acac";
+                                    break;
+                            }
+                            var path = "/v"+appVersion+"/"+cont+"/"+action;
 
-                    out += `<div class='panel panel-default'>
-                                <div class='panel-heading'>
-                                    <div class='row panel panel-blue' style='padding:0px;margin-left:0px;margin-right:0px;'>
-                                        <div class='col-md-1' style='padding-top:8px;padding-bottom:8px;background-color:`+mthd_clr+`'>`+action+`</div>
-                                            <div class='col-md-5' style='padding:0px;margin:0px;'>
-                                                <h4 class='panel-title'>
-                                                <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`' style='background-color:`+path_clr+`;line-height:2.0;'>`+path+`</a>
-                                                </h4>
+                            out += `<div class='panel panel-default'>
+                                        <div class='panel-heading'>
+                                            <div class='row panel panel-blue' style='padding:0px;margin-left:0px;margin-right:0px;'>
+                                                <div class='col-md-1' style='padding-top:8px;padding-bottom:8px;background-color:`+mthd_clr+`'>`+action+`</div>
+                                                    <div class='col-md-5' style='padding:0px;margin:0px;'>
+                                                        <h4 class='panel-title'>
+                                                        <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion-`+count+`' href='#collapse-`+count+`' style='background-color:`+path_clr+`;line-height:2.0;'>`+path+`</a>
+                                                        </h4>
+                                                    </div>
+                                                    <div class='col-md-5' style="padding-top:8px;padding-bottom:8px;">
+                                                        <span style='font-weight:normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.6;'>`+apiObject.description+`</span>
+                                                    </div>`;
+                            if(apiObject.hook){
+                                out += `               <div class='col-md-1' style="padding:0px;margin:0px;">
+                                                        <button onclick="location.href='hook_create.html?k2=`+cont+`&k3=`+action+`'" type='button' class='btn btn-primary' style='font-weight:normal;font-family:Arial, sans-serif;font-size: 15px;line-height:1.6;margin-left:8%;float:right;'>Create Hook</button>
+                                                    </div>`;
+                            }
+                            out += `            </div>
+                                        </div>
+                                        <div id='collapse-`+count+`' class='panel-collapse collapse'>
+                                            <div style='padding:10px;background-color:#E7E7E7'>
+
+                                                <div class='panel panel-grey margin-bottom-40'>
+                                                    <div class='panel-heading'>
+                                                        <h3 class='panel-title' style='padding-left:15px;'>URI</h3>
+                                                    </div>
+                                                <div class='panel-body'>`+path+`</div>
                                             </div>
-                                            <div class='col-md-5' style="padding-top:8px;padding-bottom:8px;">
-                                                <span style='font-weight:normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.6;'>`+apiObject.description+`</span>
-                                            </div>`;
-                    if(apiObject.hook){
-                        out += `               <div class='col-md-1' style="padding:0px;margin:0px;">
-                                                <button onclick="location.href='hook_create.html?k2=`+cont+`&k3=`+action+`'" type='button' class='btn btn-primary' style='font-weight:normal;font-family:Arial, sans-serif;font-size: 15px;line-height:1.6;margin-left:8%;float:right;'>Create Hook</button>
-                                            </div>`;
-                    }
-                    out += `            </div>
-                                </div>
-                                <div id='collapse-`+count+`' class='panel-collapse collapse'>
-                                    <div style='padding:10px;background-color:#E7E7E7'>
-
-                                        <div class='panel panel-grey margin-bottom-40'>
-                                            <div class='panel-heading'>
-                                                <h3 class='panel-title' style='padding-left:15px;'>URI</h3>
-                                            </div>
-                                        <div class='panel-body'>`+path+`</div>
-                                    </div>
-                                    </br>`;
+                                            </br>`;
 
 
-                    <!-- START EXAMPLE CALL -->
-                    out += "           <header style='font-weight:bold;font-size: 12px;'>Example API Call</header>";
+                            <!-- START EXAMPLE CALL -->
+                            out += "           <header style='font-weight:bold;font-size: 12px;'>Example API Call</header>";
 
-                    //if(val3.inputjson!=null){
-                    //    out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" -d "+val3.inputjson+" 'http://localhost:8080"+path+"'</div>";
-                    //}else{
-                        out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" '"+window.url+path+"'</div>";
-                    //}
+                            //if(val3.inputjson!=null){
+                            //    out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" -d "+val3.inputjson+" 'http://localhost:8080"+path+"'</div>";
+                            //}else{
+                                out += "     <div class='alert alert-warning' style='padding:5px;'>curl -v -i -H 'Content-Type: application/json' -H 'Authorization: Bearer &lt;YOUR TOKEN HERE&gt;' --request "+apiObject.method+" '"+window.url+path+"'</div>";
+                            //}
 
-                    out += "            </br>";
-                    <!-- END EXAMPLE CALL -->
+                            out += "            </br>";
+                            <!-- END EXAMPLE CALL -->
 
 
 
-                    <!-- START REQUEST VARS -->
-                    var receives = "";
-                    receives += `<div class='panel panel-grey margin-bottom-40'>
-                                    <div class='panel-heading' style='padding-left:15px;'>
-                                        <h3 class='panel-title'>Request Variables</h3>
-                                    </div>
-                                    <div class='panel-body' style='padding:5px;'>
-                                        <table class='table'>
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Type</th>
-                                                    <th>Desc</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>`;
-
-                    var receivesNull = true
-
-
-
-                    if(apiObject.receives){
-                        for (const rec of apiObject.receives) {
-                        receives += "                   <tr>";
-                        receives += `                       <td>`+rec.name+`</td>
-                                                            <td>`+rec.type+`</td>
-                                                            <td>`+rec.description+`</td>`;
-                        receives += "                   </tr>";
-                        }
-
-                    }
-
-                    receives += `                        </tbody>
-                                                    </table>
-                                                 </div>
-                                            </div>
-                                            <br/>`;
-                    out += receives;
-
-                    <!-- END REQUEST VARS -->
-
-
-                    <!-- START RESPONSE VARS -->
-                    var returns = "";
-                    returns += `            <div class='panel panel-grey margin-bottom-40'>
+                            <!-- START REQUEST VARS -->
+                            var receives = "";
+                            receives += `<div class='panel panel-grey margin-bottom-40'>
                                             <div class='panel-heading' style='padding-left:15px;'>
-                                                <h3 class='panel-title'>Response Variables</h3>
+                                                <h3 class='panel-title'>Request Variables</h3>
                                             </div>
                                             <div class='panel-body' style='padding:5px;'>
-                                             <table class='table'>
-                                                 <thead>
-                                                     <tr>
-                                                         <th>Name</th>
-                                                         <th>Type</th>
-                                                         <th>Desc</th>
-                                                     </tr>
-                                                 </thead>
-                                                 <tbody>`;
+                                                <table class='table'>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Type</th>
+                                                            <th>Desc</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>`;
 
-                    if(apiObject.returns){
-                        for (const ret of apiObject.returns) {
-                        returns += "                   <tr>";
-                        returns += `                        <td>`+ret.name+`</td>
-                                                            <td>`+ret.type+`</td>
-                                                            <td>`+ret.description+`</td>`;
-                        returns += "                   </tr>";
-                        }
-                    }
-
-                    returns += `                        </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <br/>`;
-
-                    out += returns;
-                    <!-- END RESPONSE VARS -->
-
-                                    out += `    </div>
-                                            </div>
-                                        </div>`;
+                            var receivesNull = true
 
 
 
-count = count + 1;
-                }
-            }
+                            if(apiObject.receives){
+                                for (const rec of apiObject.receives) {
+                                receives += "                   <tr>";
+                                receives += `                       <td>`+rec.name+`</td>
+                                                                    <td>`+rec.type+`</td>
+                                                                    <td>`+rec.description+`</td>`;
+                                receives += "                   </tr>";
+                                }
 
-                                        out += "</div>";
-        }
-        document.getElementById("apidocs").innerHTML = out;
+                            }
+
+                            receives += `                        </tbody>
+                                                            </table>
+                                                         </div>
+                                                    </div>
+                                                    <br/>`;
+                            out += receives;
+
+                            <!-- END REQUEST VARS -->
+
+
+                            <!-- START RESPONSE VARS -->
+                            var returns = "";
+                            returns += `            <div class='panel panel-grey margin-bottom-40'>
+                                                    <div class='panel-heading' style='padding-left:15px;'>
+                                                        <h3 class='panel-title'>Response Variables</h3>
+                                                    </div>
+                                                    <div class='panel-body' style='padding:5px;'>
+                                                     <table class='table'>
+                                                         <thead>
+                                                             <tr>
+                                                                 <th>Name</th>
+                                                                 <th>Type</th>
+                                                                 <th>Desc</th>
+                                                             </tr>
+                                                         </thead>
+                                                         <tbody>`;
+
+                            if(apiObject.returns){
+                                for (const ret of apiObject.returns) {
+                                returns += "                   <tr>";
+                                returns += `                        <td>`+ret.name+`</td>
+                                                                    <td>`+ret.type+`</td>
+                                                                    <td>`+ret.description+`</td>`;
+                                returns += "                   </tr>";
+                                }
+                            }
+
+                            returns += `                        </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <br/>`;
+
+                            out += returns;
+                            <!-- END RESPONSE VARS -->
+
+                                            out += `    </div>
+                                                    </div>
+                                                </div>`;
 
 
 
+                    count = count + 1;
+                                    }
+                                }
 
-      }
-   }
-};
-xhr.send();
-
-/*
-			$.ajax({
-				type:'GET',
-				url: window.url+'/v1.0/apidoc/show',
-				crossDomain: true,
-                cache:false,
-                async:true,
-                dataType: 'json',
-                xhrFields: {
-                    withCredentials: false
-                },
-				headers:{
-				    'Access-Control-Allow-Origin':'http://test.nosegrind.net',
-					'Authorization':'Bearer '+tmp.token
-				},
-
-				success: function(json) {
-				    var out = "";
-                    var count = 1;
-                    if(json){ console.log('success ;'+json); }
-
-				},
-               error: function(jqXHR, textStatus, errorThrown) {
-                    if (jqXHR.statusText =='abort') { return; }
-                    console.log("fails :"+jqXHR.status);
-                    console.log(jqXHR.getAllResponseHeaders());
-                    console.log(textStatus);
-                    //alert(jqXHR.responseText);
-                },
-			});
-			*/
-
+                                                            out += "</div>";
+                            }
+                            document.getElementById("apidocs").innerHTML = out;
+                          }
+                       }
+        };
+        xhr.send();
 	}
 
-		function convert(format,area) {
+	function convert(format,area) {
             var val = document.getElementById(area).value;
 		    switch(format){
 		        case 'JSON':
@@ -250,8 +212,7 @@ xhr.send();
 
 		}
 
-
-		function callApi(method,path,count){
+	function callApi(method,path,count){
                 var select = document.getElementById("format_"+count);
                 var format = select.options[select.selectedIndex].text;
 
@@ -380,17 +341,17 @@ xhr.send();
                             }
                         },
                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log(jqXHR.statusText);
-                            console.log(jqXHR.status);
-                            console.log(jqXHR.getAllResponseHeaders());
-                            console.log(textStatus);
+                            //console.log(jqXHR.statusText);
+                            //console.log(jqXHR.status);
+                            //console.log(jqXHR.getAllResponseHeaders());
+                            //console.log(textStatus);
                             alert(errorThrown);
                         },
                     });
                 }
     	}
 
-        function generateTemplate(method,path,count){
+    function generateTemplate(method,path,count){
                 var select = document.getElementById("format_"+count);
                 var format = select.options[select.selectedIndex].text;
 
@@ -455,11 +416,12 @@ xhr.send();
                             //console.log(json);
                         },
                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log(jqXHR.statusText);
-                            console.log(jqXHR.status);
-                            console.log(jqXHR.getAllResponseHeaders());
-                            console.log(textStatus);
-                            console.log(errorThrown);
+                            //console.log(jqXHR.statusText);
+                            //console.log(jqXHR.status);
+                            //console.log(jqXHR.getAllResponseHeaders());
+                            //console.log(textStatus);
+                            //console.log(errorThrown);
+                            alert(errorThrown);
                         },
                     });`;
                 }else{
@@ -485,15 +447,15 @@ xhr.send();
                             //console.log(json);
                         },
                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log(jqXHR.statusText);
-                            console.log(jqXHR.status);
-                            console.log(jqXHR.getAllResponseHeaders());
-                            console.log(textStatus);
-                            console.log(errorThrown);
+                            //console.log(jqXHR.statusText);
+                            //console.log(jqXHR.status);
+                            //console.log(jqXHR.getAllResponseHeaders());
+                            //console.log(textStatus);
+                            //console.log(errorThrown);
+                            alert(errorThrown);
                         },
                     });`;
                 }
                 document.getElementById("output_"+count).innerHTML = out;
         }
-
 

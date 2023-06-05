@@ -120,6 +120,7 @@
 <script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
 
 
+
 <script type="text/javascript">
 		var header = null;
 		var footer = null;
@@ -131,13 +132,13 @@
 				header = "common/admin_header.html";
 			}
 		}else{
-			console.log("isNull : "+localStorage.getItem('token'));
+			// console.log("isNull : "+localStorage.getItem('token'));
 			header = "common/nologin_header.html";
 		}
 
 		footer = "common/orp_footer.html";
 		$(function(){
-			console.log('orp_header loading header...');
+			// console.log('orp_header loading header...');
 			$("#orp_header").load(header);
 			$("#orp_footer").load(footer);
 		});

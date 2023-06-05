@@ -70,7 +70,7 @@
                     location.reload();
                 };
             }).fail(function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus);
+                alert(textStatus);
                 var msg = '';
                 if (jqXHR.status === 0) {
                     msg = 'Not connected.Verify Network.'+window.url+'.Error:'+errorThrown;

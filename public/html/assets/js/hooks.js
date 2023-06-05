@@ -9,10 +9,16 @@ function initCreateHooks(){
 
     xhr.addEventListener("readystatechange", function () {
         if(this.readyState === this.DONE){
-            if (xhr.status === 200) {
+            switch(this.status) {
+              case 200:
                 console.log("Success : "+this.responseText);
-            }else{
-                console.log("Fail : "+this.status);
+                break;
+              case 401:
+                  localStorage.removeItem('token');
+                  header = "common/nologin_header.html";
+                break;
+              default:
+                alert(this.responseText);
             }
         }
     });
