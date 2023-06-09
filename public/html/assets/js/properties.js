@@ -15,20 +15,25 @@ function initProperties(){
                 var json = JSON.parse(this.responseText);
                 var props = Object.keys(json);
 
-                out += `<div class='panel panel-default'>
-                            <div class='panel-heading'>`;
-                for (const prop of props) {
                 out += `
-                                    <div class='row panel panel-blue' style='padding:0px;margin-left:0px;margin-right:0px;'>
-                                        <div class='col-md-4' style='padding-top:8px;padding-bottom:8px;background-color:#00CC00'>`+prop+`</div>
-                                            <div class='col-md-5' style="padding-top:8px;padding-bottom:8px;">
-                                                <span style='font-weight:normal;font-family:Arial, sans-serif;font-size: 13px;line-height:1.6;'>`+json[prop]+`</span>
-                                            </div>
-                                        </div>
-                                    </div>`;
+                <h2 id="props">Properties</h2>
+                <div class="table-responsive"><table class="table">
+                <thead>
+                <tr>
+                <th>Name</th>
+                <th>Value</th>
+                </tr>
+                </thead>
+                <tbody>`;
+
+                for (const prop of props) {
+                out += `<tr>
+                <td>`+prop+`</td>
+                <td><code>`+json[prop]+`</code></td>
+                </tr>`;
                 }
-                out += `      </div>
-                        </div>`;
+                out += `</tbody>
+                </table></div>`;
                  document.getElementById("apidocs").innerHTML = out;
                 break;
               case 401:
