@@ -55,7 +55,7 @@
 
 	<script type="text/javascript">
 
-		function getApiDocs() {
+		function getProperties() {
 			var loadJS = function(url, implementationCode, location){
 				var scriptTag = document.createElement('script');
 				scriptTag.src = url;
@@ -66,9 +66,9 @@
 				location.appendChild(scriptTag);
 			};
 			var reports = function(){
-				initApiDocs();
+				initProperties();
 			}
-			loadJS('/assets/js/apidocs.js', reports, document.body);
+			loadJS('/assets/js/properties.js', reports, document.body);
 		}
 
 	</script>
@@ -95,7 +95,7 @@
 		<div class="row">
 			<!-- Begin Content -->
 			<div id="apidocs" class="col-lg-12">
-
+test
 			</div>
 			<!-- End Content -->
 		</div>
@@ -144,7 +144,7 @@
 		});
 
 		jQuery(document).ready(function() {
-			getApiDocs();
+			getProperties();
 			App.init();
 			StyleSwitcher.initStyleSwitcher();
 		});
