@@ -76,6 +76,7 @@
                             }
                             out += `            </div>
                                         </div>
+
                                         <div id='collapse-`+count+`' class='panel-collapse collapse'>
                                             <div style='padding:10px;background-color:#E7E7E7'>
 
@@ -210,7 +211,7 @@
 		            break;
 		    }
 
-		}
+	}
 
 	function callApi(method,path,count){
                 var select = document.getElementById("format_"+count);
