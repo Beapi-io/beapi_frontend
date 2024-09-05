@@ -1,6 +1,9 @@
 function initProperties(){
     var tmp = JSON.parse(window.token);
 
+    var appVersion = "1.0"
+    var url = window.url+'/v'+appVersion+'/properties/getAll';
+
     const data = null;
     const xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
@@ -21,7 +24,7 @@ function initProperties(){
         }
     });
 
-    xhr.open("GET", "http://localhost:8080/v1.0/properties/getAll");
+    xhr.open("GET", url);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Authorization", "Bearer "+tmp.token);
 
@@ -29,6 +32,21 @@ function initProperties(){
 }
 
 function outputProperties(responseText) {
+
+
+            var cookies = document.cookie.split(';');
+            for(var i=0 ; i < cookies.length ; ++i) {
+                var pair = cookies[i].trim().split('=');
+                console.log("pair:"+pair);
+                if(pair[0]=='JSESSIONID'){
+                    console.log(pair[0]+"/"+pair[1]);
+                }
+            }
+
+
+
+
+
        var out = "";
         document.getElementById("apidocs").innerHTML = null
 
@@ -103,3 +121,5 @@ function outputProperties(responseText) {
 
          document.getElementById("apidocs").innerHTML = out;
 }
+
+

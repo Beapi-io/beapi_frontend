@@ -5,6 +5,7 @@
         var url = window.url+'/v'+appVersion+'/apidoc/show';
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
+        xhr.withCredentials = true;
         xhr.setRequestHeader("Authorization", "Bearer "+tmp.token);
         xhr.onreadystatechange = function () {
            if (xhr.readyState === 4) {
@@ -264,10 +265,11 @@
                         crossDomain: true,
                         cache:false,
                         xhrFields: {
-                            withCredentials: false
+                            withCredentials: true
                         },
                         beforeSend: function(request){
                             request.setRequestHeader('Authorization','Bearer '+tmp.token);
+                            request.setRequestHeader("Set-Cookie",document.cookie);
                         },
                         headers:{
                             'Content-Type': contenttype
@@ -308,10 +310,11 @@
                         crossDomain: true,
                         cache:false,
                         xhrFields: {
-                            withCredentials: false
+                            withCredentials: true
                         },
                         beforeSend: function(request){
                             request.setRequestHeader('Authorization','Bearer '+tmp.token);
+                            request.setRequestHeader("Set-Cookie",document.cookie);
                         },
                         headers:{
                             'Content-Type': contenttype
@@ -404,10 +407,11 @@
                         crossDomain: true,
                         cache:false,
                         xhrFields: {
-                            withCredentials: false
+                            withCredentials: true
                         },
                         beforeSend: function(request){
                             request.setRequestHeader('Authorization','Bearer `+tmp.token+`');
+                            request.setRequestHeader("Set-Cookie",document.cookie);
                         },
                         headers:{
                             'Content-Type': contenttype
@@ -435,10 +439,11 @@
                         crossDomain: true,
                         cache:false,
                         xhrFields: {
-                            withCredentials: false
+                            withCredentials: true
                         },
                         beforeSend: function(request){
                             request.setRequestHeader('Authorization','Bearer `+tmp.token+`');
+                            request.setRequestHeader("Set-Cookie",document.cookie);
                         },
                         headers:{
                             'Content-Type': '`+contenttype+`'
