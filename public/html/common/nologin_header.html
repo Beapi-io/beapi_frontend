@@ -23,7 +23,7 @@
         <script>
         // onsubmit="submitLogin(this.username.value,this.password.value);"
 
-        $('#sky-form2,#sky-form3').submit(function (event) {
+        $('#login').submit(function (event) {
             event.preventDefault();
             var jsonData = {"username":$('#username').val(),"password":$('#password').val() };
 
@@ -112,7 +112,7 @@
                         <ul class="dropdown-menu">
                             <li style="display: inline-block;">
 
-                                <form id="sky-form2" style="margin-left: 10%;margin-right:10%;width: 80%;">
+                                <form id="login" style="margin-left: 10%;margin-right:10%;width: 80%;">
 
                                     <header>Login form</header>
                                     <fieldset>
