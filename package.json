@@ -12,7 +12,7 @@
     "express": "~4.13.1",
     "googleapis": "^134.0.0",
     "jade": "~1.11.0",
-    "morgan": "~1.6.1",
+    "morgan": "~1.9.1",
     "serve-favicon": "~2.3.0",
     "stylus": "0.42.3"
   }
