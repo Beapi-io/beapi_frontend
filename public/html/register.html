@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Beapi > Forgot Password</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+
+	<!-- CONFIG -->
+	<script type="text/javascript" src="../../config.js"></script>
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/headers/header-v6.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v1.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/animate.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
+	<link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+
+	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+
+
+	<style type="text/css">
+	#chartdiv {
+		width: 100%;
+		height: 500px;
+	}
+	</style>
+
+	<script>
+
+	$(document).ready(function () {
+		$('#register').submit(function (event) {
+			event.preventDefault();
+			var form = this;
+			var jsonData = {"username":$('#email').val(),  "email":$('#email').val(), "fname":$('#firstName').val(),"lname":$('#lastName').val(), "password":$('#password').val() };
+
+			$.ajax({
+				type: 'POST',
+				url: window.url + "/register",
+				cache:false,
+				async:true,
+				contentType: 'application/json',
+				data: JSON.stringify(jsonData),
+				//dataType:'json',
+				headers: {
+					'Access-Control-Allow-Origin': 'http://localhost:8080'
+				},
+				xhrFields:{
+					withCredentials: false
+				},
+				crossDomain: true,
+				error: function (xhr, textStatus, thrownError){
+					// ### this is the return data ###
+					alert(xhr.responseText);
+					window.location.href = "http://localhost";
+				},
+				success: function (data, textStatus, xhr){
+					alert(xhr.responseText);
+					console.log('success');
+					window.location.href = "http://localhost";
+				},
+				complete: function (xhr, textStatus) {
+					console.log('complete');
+				}
+			}).done(function(data, textStatus, jqXHR) {
+				if(textStatus=='success'){
+					var tmp = jqXHR.responseText
+					if(tmp!=null){
+						alert("If email address exists, you will received a message soon...");
+					}else{
+						//alert("Failed");
+					}
+				};
+			}).fail(function(jqXHR, textStatus, errorThrown) {
+				console.log(textStatus);
+			});
+		});
+	});
+
+	</script>
+</head>
+
+<body class="header-fixed">
+	<div class="wrapper">
+		<!--=== Header v6 ===-->
+		<div id="orp_header" class="header-v6 header-white-transparent header-sticky">
+		</div>
+		<!--=== End Header v6 ===-->
+
+		<!-- Interactive Slider v2 -->
+		<div class="interactive-slider-v2 img-v4" style="padding: 50px 0 34px 0;">
+			<div class="container">
+				<p> </p>
+			</div>
+		</div>
+		<!-- End Interactive Slider v2 -->
+
+		<!--=== Content ===-->
+
+		<div class="container content">
+			<div class="row">
+				<!-- Begin Content -->
+				<div class="col-lg-12">
+
+
+
+						<header>Register</header>
+
+						<li style="display: inline-block;">
+
+							<form id="register" style="margin-left: 10%;margin-right:10%;width: 80%;">
+
+								<fieldset>
+
+									<section>
+										<label class="label" style="color:black;">Email</label>
+										<div>
+											<label class="input">
+												<input type="text" id="email" name="email">
+											</label>
+										</div>
+									</section>
+
+									<section>
+										<label class="label" style="color:black;">First Name</label>
+										<div>
+											<label class="input">
+												<input type="text" id="firstName" name="firstName">
+											</label>
+										</div>
+									</section>
+
+									<section>
+										<label class="label" style="color:black;">Last Name</label>
+										<div>
+											<label class="input">
+												<input type="text" id="lastName" name="lastName">
+											</label>
+										</div>
+									</section>
+
+									<section>
+										<label class="label" style="color:black;">Password</label>
+										<div>
+											<label class="input">
+												<input type="password" id="password" name="password">
+											</label>
+										</div>
+									</section>
+
+								</fieldset>
+								<footer>
+									<button type="submit" class="btn-u">Register</button>
+								</footer>
+							</form>
+						</li>
+
+
+
+				</div>
+				<!-- End Content -->
+			</div>
+		</div><!--/end container-->
+
+		<!--=== Footer Version 1 ===-->
+		<div id="orp_footer" class="footer-v1">
+		</div>
+		<!--=== End Footer Version 1 ===-->
+	</div><!--/wrapper-->
+
+	<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- JS Implementing Plugins -->
+	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+	<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+	<script type="text/javascript" src="assets/js/xml2json.js"></script>
+	<!-- JS Customization -->
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<!-- JS Page Level -->
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+
+
+	<script type="text/javascript">
+		$(function(){
+			$("#orp_header").load("common/nologin_header.html");
+			$("#orp_footer").load("common/orp_footer.html");
+		});
+
+		jQuery(document).ready(function() {
+			// App.init();
+			// StyleSwitcher.initStyleSwitcher();
+		});
+	</script>
+	<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+	<script src="assets/plugins/html5shiv.js"></script>
+	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+	<![endif]-->
+
+</body>
+</html>
