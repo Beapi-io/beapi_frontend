@@ -76,16 +76,16 @@
 					'Access-Control-Allow-Origin': 'http://localhost:8080'
 				},
 				xhrFields:{
-					withCredentials: false
+					withCredentials: true
 				},
 				crossDomain: true,
 				error: function (xhr, textStatus, thrownError){
 					// ### this is the return data ###
-					alert(xhr.responseText);
+					alert(xhr.status+" : "+xhr.responseText);
 					window.location.href = "http://localhost";
 				},
 				success: function (data, textStatus, xhr){
-					alert(xhr.responseText);
+					alert(xhr.status+" : "+xhr.responseText);
 					console.log('success');
 					window.location.href = "http://localhost";
 				},
