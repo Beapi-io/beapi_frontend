@@ -2,7 +2,7 @@ function initProperties(){
     var tmp = JSON.parse(window.token);
 
     var appVersion = "1.0"
-    var url = window.url+'/v'+appVersion+'/properties/getAll';
+    var url = window.url+'/v'+appVersion+'/actuator/getProperties';
 
     const data = null;
     const xhr = new XMLHttpRequest();
@@ -13,6 +13,7 @@ function initProperties(){
             switch(this.status) {
               case 200:
                 outputProperties(this.responseText)
+                alert(this.responseText);
                 break;
               case 401:
                   localStorage.removeItem('token');
@@ -32,7 +33,7 @@ function initProperties(){
 }
 
 function outputProperties(responseText) {
-
+    alert("calling output properties (properties.js)");
 
             var cookies = document.cookie.split(';');
             for(var i=0 ; i < cookies.length ; ++i) {
@@ -51,7 +52,9 @@ function outputProperties(responseText) {
         document.getElementById("apidocs").innerHTML = null
 
         var json = JSON.parse(responseText);
+
         var props = Object.keys(json);
+alert("props output (properties.js) : "+props);
 
         out += `
         <h2 id="props">Properties</h2>
@@ -61,6 +64,7 @@ function outputProperties(responseText) {
         <th class='col-md-3'>Name</th>
         <th  class='col-md-9'>Value</th>
         </tr></thead><tbody>`;
+
 
         out += `
         <tr><td>Name</td><td><code>`+json['name']+`</code></td></tr>
@@ -88,21 +92,9 @@ function outputProperties(responseText) {
         <th  class='col-md-9'>Value</th>
         </tr></thead><tbody>`;
 
-        out += `
-        <tr><td>Super User Role</td><td><code>`+json['security']['superuserRole']+`</code></td></tr>
-        <tr><td>User Role</td><td><code>`+json['security']['userRole']+`</code></td></tr>
-        <tr><td>Test Role</td><td><code>`+json['security']['testRole']+`</code></td></tr>
-        <tr><td>Network Groups</td><td><code>`+json['security']['networkGroups']+`</code></td></tr>
-        <tr><td>Network Roles</td><td>`;
 
-        var grps = Object.keys(json['security']['networkRoles']);
+alert("out2:"+out)
 
-        out += `<div class="table-responsive"><table class="table" style='margin:0px;'>`;
-        for (const grp of grps) {
-            out += `<tr><td class='col-md-3'  style='border: none;'><code>`+grp+`</code></th><td  class='col-md-9' style='border: none;'>`+JSON.stringify(json['security']['networkRoles'][grp])+`</th></tr>`;
-        }
-        out += `</table></div>`;
-        out += `</td></tr>`;
 /*
         out += `<tr><td>CORS Network Groups</td><td>`;
 
@@ -118,6 +110,7 @@ function outputProperties(responseText) {
 */
 
         out += `</tbody></table></div><br><br>`;
+alert("out3 : "+out)
 
          document.getElementById("apidocs").innerHTML = out;
 }
