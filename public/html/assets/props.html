@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Beapi > API Docs</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+
+	<!-- CONFIG -->
+	<script type="text/javascript" src="../../config.js"></script>
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/headers/header-v6.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v1.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/animate.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
+	<link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+
+
+	<style type="text/css">
+	#chartdiv {
+		width: 100%;
+		height: 500px;
+	}
+	</style>
+
+
+
+	<script type="text/javascript">
+		var test = localStorage.getItem('token');
+		if(test!=null){
+			window.location.replace("apidoc.html");
+		}else{
+			window.location.replace("index.html");
+		}
+
+		function getProperties() {
+			var loadJS = function(url, implementationCode, location){
+				var scriptTag = document.createElement('script');
+				scriptTag.src = url;
+
+				scriptTag.onload = implementationCode;
+				scriptTag.onreadystatechange = implementationCode;
+
+				location.appendChild(scriptTag);
+			};
+			var reports = function(){
+				initProperties();
+			}
+			loadJS('/assets/js/properties.js', reports, document.body);
+		}
+
+	</script>
+</head>
+
+<body class="header-fixed">
+<div class="wrapper">
+	<!--=== Header v6 ===-->
+	<div id="orp_header" class="header-v6 header-white-transparent header-sticky">
+	</div>
+	<!--=== End Header v6 ===-->
+
+	<!-- Interactive Slider v2 -->
+	<div class="interactive-slider-v2 img-v4" style="padding: 50px 0 34px 0;">
+		<div class="container">
+			<p> </p>
+		</div>
+	</div>
+	<!-- End Interactive Slider v2 -->
+
+	<!--=== Content ===-->
+
+	<div class="container content">
+		<div class="row">
+			<!-- Begin Content -->
+			<div id="index" class="col-lg-12">
+test
+			</div>
+			<!-- End Content -->
+		</div>
+	</div><!--/end container-->
+
+	<!--=== Footer Version 1 ===-->
+	<div id="orp_footer" class="footer-v1">
+	</div>
+	<!--=== End Footer Version 1 ===-->
+</div><!--/wrapper-->
+
+<!-- JS Global Compulsory -->
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+<script type="text/javascript" src="assets/js/xml2json.js"></script>
+<!-- JS Customization -->
+<script type="text/javascript" src="assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script type="text/javascript" src="assets/js/app.js"></script>
+<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+
+
+
+<script type="text/javascript">
+		var header = null;
+		var footer = null;
+		var json = null;
+
+		if(localStorage.getItem('token')!=null){
+			header = "common/orp_header.html"
+			var token = localStorage.getItem('token');
+			if(token){
+				header = "common/admin_header.html";
+			}
+		}else{
+			window.location.replace('login.html');
+		}
+
+		footer = "common/orp_footer.html";
+		$(function(){
+			// console.log('orp_header loading header...');
+			$("#orp_header").load(header);
+			$("#orp_footer").load(footer);
+		});
+
+		jQuery(document).ready(function() {
+			getProperties();
+			App.init();
+			StyleSwitcher.initStyleSwitcher();
+		});
+
+		var x2js = new X2JS();
+	</script>
+<!--[if lt IE 9]>
+<script src="assets/plugins/respond.js"></script>
+<script src="assets/plugins/html5shiv.js"></script>
+<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+<![endif]-->
+
+</body>
+</html>

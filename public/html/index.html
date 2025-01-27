@@ -19,6 +19,12 @@
 	<!-- CONFIG -->
 	<script type="text/javascript" src="../../config.js"></script>
 
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 	<!-- Web Fonts -->
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
@@ -53,25 +59,13 @@
 	</style>
 
 
-	<script type="text/javascript">
-
-		function getProperties() {
-			var loadJS = function(url, implementationCode, location){
-				var scriptTag = document.createElement('script');
-				scriptTag.src = url;
-
-				scriptTag.onload = implementationCode;
-				scriptTag.onreadystatechange = implementationCode;
-
-				location.appendChild(scriptTag);
-			};
-			var reports = function(){
-				initProperties();
-			}
-			loadJS('/assets/js/properties.js', reports, document.body);
+	<script>
+		var test = localStorage.getItem('token');
+		if(test==null){
+			window.location = "login.html";
 		}
-
 	</script>
+
 </head>
 
 <body class="header-fixed">
@@ -92,13 +86,158 @@
 	<!--=== Content ===-->
 
 	<div class="container content">
+		<!-- Begin Content -->
+		<div class="row">
+
+			<div id="index" class="col-lg-12">
+
+
+				<table width=100% style="border-spacing: 30px;border: solid thin gray;">
+					<tr  style="border-spacing: 30px;">
+						<td rowspan="2" width="20%">
+							<canvas id="doughnut-chart" width="300" height="200"></canvas>
+						</td>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+									<div class="card">
+										<div class="card-header bg-success" style=""font-weight: bold;"><h2>200</h2></div>
+										<div class="card-body bg-gradient-success">
+											10000 reqs
+										</div>
+									</div>
+						</td>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+									<div class="card">
+										<div class="card-header bg-warning" style="font-weight: bold;"><h2>300</h2></div>
+										<div class="card-body">
+											0 reqs
+										</div>
+									</div>
+						</td>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+									<div class="card">
+										<div class="card-header bg-warning" style="font-weight: bold;"><h2>301</h2></div>
+										<div class="card-body">
+											0 reqs
+										</div>
+									</div>
+						</td>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+									<div class="card">
+										<div class="card-header bg-warning" style="font-weight: bold;"><h2>302</h2></div>
+										<div class="card-body">
+											0 reqs
+										</div>
+									</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+							<div class="card">
+								<div class="card-header bg-danger" style="font-weight: bold;"><h2>400</h2></div>
+								<div class="card-body">
+									0 reqs
+								</div>
+							</div>
+						</td>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+							<div class="card">
+								<div class="card-header bg-danger" style="font-weight: bold;"><h2>401</h2></div>
+								<div class="card-body">
+									0 reqs
+								</div>
+							</div>
+						</td>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+							<div class="card">
+								<div class="card-header bg-danger" style="font-weight: bold;"><h2>402</h2></div>
+								<div class="card-body">
+									0 reqs
+								</div>
+							</div>
+						</td>
+						<td style="order: 2px solid #3498db; padding: 15px; text-align: center;">
+							<div class="card">
+								<div class="card-header bg-danger" style="font-weight: bold;"><h2>404</h2></div>
+								<div class="card-body">
+									0 reqs
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+
+
+			</div>
+		</div>
 		<div class="row">
 			<!-- Begin Content -->
 			<div id="index" class="col-lg-12">
-test
+				<canvas id="horbar-chart" height="150"></canvas>
 			</div>
-			<!-- End Content -->
 		</div>
+		<div class="row" >
+			<!-- Begin Content -->
+			<div id="index" class="col-lg-12">
+				<table class="table">
+					<thead>
+					<tr>
+						<th scope="col">Status</th>
+						<th scope="col">URI</th>
+						<th scope="col">Count</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+
+						<td>200</td>
+						<td>/uri/show</td>
+						<td>5000</td>
+					</tr>
+					<tr>
+						<td>200</td>
+						<td>/hook/create</td>
+						<td>500</td>
+
+					</tr>
+					<tr>
+						<td>200</td>
+						<td>/apidoc/show</td>
+						<td>25</td>
+					</tr>
+					</tbody>
+				</table>
+
+				<table class="table">
+					<thead>
+					<tr>
+						<th scope="col">Status</th>
+						<th scope="col">URI</th>
+						<th scope="col">Count</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+
+						<td>400</td>
+						<td>/uri/show</td>
+						<td>50</td>
+					</tr>
+					<tr>
+						<td>400</td>
+						<td>/hook/create</td>
+						<td>25</td>
+
+					</tr>
+					<tr>
+						<td>400</td>
+						<td>/apidoc/show</td>
+						<td>5</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- End Content -->
 	</div><!--/end container-->
 
 	<!--=== Footer Version 1 ===-->
@@ -119,6 +258,55 @@ test
 <script type="text/javascript" src="assets/js/app.js"></script>
 <script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
 
+<script>
+function initStats(){
+	alert("init stats called");
+    var tmp = JSON.parse(window.token);
+
+    var appVersion = "1.0"
+    var url = window.url+'/v'+appVersion+'/actuator/stats';
+
+    const data = null;
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if(this.readyState === this.DONE){
+            switch(this.status) {
+              case 200:
+                const obj = JSON.parse(this.responseText);
+
+				var totals = {};
+				for(uri in obj['stats']){
+					console.log(Object.values(obj['stats'][uri])[0][0]);
+					if(totals[uri]){
+
+						totals[uri] = totals[uri] + Object.values(obj['stats'][uri])[0][0]
+					}else{
+						totals[uri] = Object.values(obj['stats'][uri])[0][0]
+					}
+				}
+				alert(JSON.stringify(totals));
+				createDonut(totals);
+                break;
+              case 401:
+                  localStorage.removeItem('token');
+                  header = "common/nologin_header.html";
+                break;
+              default:
+                stats = this.responseText;
+                alert(stats);
+            }
+        }
+    });
+
+    xhr.open("GET", url);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Authorization", "Bearer "+tmp.token);
+
+    xhr.send(data);
+}
+</script>
 
 
 <script type="text/javascript">
@@ -144,12 +332,72 @@ test
 		});
 
 		jQuery(document).ready(function() {
-			getProperties();
+			initStats();
 			App.init();
 			StyleSwitcher.initStyleSwitcher();
 		});
 
 		var x2js = new X2JS();
+	</script>
+
+	<script>
+	function createDonut(totals){
+		var keys=[];
+		var total=[];
+		var currentCode
+		alert("totals:"+totals);
+
+		var inc = 0
+		for(code in totals){
+			if(currentCode==code){
+				//add at current position
+				total[inc] = total[inc] + totals[code];
+			}else{
+				keys.push(code)
+				currentCode=code;
+				inc++;
+				total.push(totals[code]);
+			}
+		}
+
+		alert(JSON.stringify(keys));
+		alert(total);
+
+		new Chart(document.getElementById("doughnut-chart"), {
+			type: 'doughnut',
+			data: {
+			  labels: keys,
+			  datasets: [
+				{
+				  label: "Requests",
+				  data: total
+				}
+			  ]
+			},
+			options: {
+			  title: {
+				display: true,
+				text: 'Predicted world population (millions) in 2050'
+			  }
+			}
+		});
+	}
+
+		new Chart(document.getElementById('horbar-chart').getContext('2d'), {
+		  type: 'bar',
+		  data: {
+			labels: ['/user/show', '/hook/create', '/apidoc/show'],
+			datasets: [{
+			  label: 'Requests per Endpoint',
+			  data: [3000,250,10],
+			}],
+		  },
+		  options: {
+		  	maintainAspectRatio: false,
+			indexAxis: 'y', // <-- here
+			responsive: true
+		  }
+		});
 	</script>
 <!--[if lt IE 9]>
 <script src="assets/plugins/respond.js"></script>
